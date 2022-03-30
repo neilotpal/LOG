@@ -121,9 +121,9 @@ include("footer.php");
 <script>
 function validateform()
 {
-	var i = 0;	
+	var i = 0;
 	$('.errorclass').html('');
-	
+
 	if(document.getElementById("opassword").value=="")
 	{
 		document.getElementById("erropassword").innerHTML = "Kindly enter the password ...";
@@ -134,7 +134,7 @@ function validateform()
 		document.getElementById("errpassword").innerHTML = "Kindly enter the password ...";
 		i = 1;
 	}
-		
+
 	if(document.getElementById("confirmpassword").value=="")
 	{
 		document.getElementById("errconfirmpassword").innerHTML = "Kindly enter confirm password....";
