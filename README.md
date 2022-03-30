@@ -1,1 +1,1 @@
-# LOG
+# LOG : Life of Giving
