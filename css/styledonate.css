@@ -1,0 +1,93 @@
+.section-bg {
+    margin-top: 60px;
+    min-height: 250px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.cta-content h1{
+    padding: 10px 0px;
+    text-align: center;
+    color: rgb(53, 53, 53);
+    background-color: rgba(240, 248, 255, 0.397);
+}
+#backghead{
+    min-height: 400px;
+    background-size: 100% 100%;
+    opacity: 0.9;
+  }
+  
+  .tag-line{
+    margin-top: 100px;
+    padding: 5px 0px;
+    background-image: linear-gradient(to right, rgb(137, 240, 53),rgb(0, 195, 255));
+    
+  }
+  .tag-line h1{
+    color: white;
+    }
+  
+.article-meta li{
+    background-color: rgb(146, 245, 232);
+    padding: 10px 10px;
+    font-size: 18px;
+    color: rgb(5, 123, 202);
+    border-radius: 10px;
+}
+.article-description{
+    margin-top: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+.faq-heading {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .faq-card {
+    border: 1px solid #dce0e8;
+    border-radius: 6px;
+    padding: 24px 20px;
+    margin-bottom: 12px;
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .faq-open-icon {
+    font-size: 22px;
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    font-weight: 700;
+  }
+  
+  details[open] .faq-open-icon {
+    top: 18px;
+    right: 24px;
+  }
+  
+  details > summary {
+    list-style: none;
+  }
+  
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  details[open] summary {
+    color: #0186ff;
+    font-weight: 500;
+  }
+  
+  details[open] .faq-card-spoiler {
+    display: inline-block;
+    padding-top: 8px;
+    color: #8b8b9a;
+  }
+  
+  .faq-aftertext {
+    text-align: center;
+    color: #8b8b9a;
+  }
