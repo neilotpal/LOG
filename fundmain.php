@@ -134,7 +134,7 @@ else if(file_exists("imgfundraiser/".$rsedit['banner_img']))
 <div class="row">
 	<div class="col-md-2" style="padding-top: 5px;">Description</div>
 	<div class="col-md-10">
-	<textarea name="fund_raiser_description"  id="fund_raiser_description" class="form-control"><?php echo $rsedit['fund_raiser_description']; ?></textarea>
+	<textarea name="fund_raiser_description" id="fund_raiser_description" class="form-control" rows="5" cols="40"><?php echo $rsedit['fund_raiser_description']; ?></textarea>
 	<span id="errfund_raiser_description" class="errorclass"></span>
 	</div>
 </div>
@@ -255,8 +255,7 @@ else if(file_exists("imgfundraiser/".$rsedit['banner_img']))
 include("footer.php");
 ?>
 
-<script src="https://cdn.tiny.cloud/1/vkp7vwptosm1ao2ztjqdp0riscxgp2sxw81z6ma02p9h4oqc/tinymce/5/tinymce.min.js" ></script>
-<script>tinymce.init({ selector:'textarea' });</script>
+
 <script>
 function validateform()
 {
