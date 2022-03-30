@@ -126,19 +126,6 @@ else
 
 </div>
 
-<?php
-/*
-<div class="navbar-search">
-<button class="search-btn"><i class="fa fa-search"></i></button>
-<div class="search-form">
-<form>
-<input class="input" type="text" name="search" placeholder="Search">
-</form>
-</div>
-</div>
-*/
-?>
-
 <ul class="navbar-menu nav navbar-nav navbar-right">
 
 <?php
@@ -159,7 +146,7 @@ if(isset($_SESSION['donor_id']))
 <li class="has-dropdown"><a href="#">Fundraiser</a>
 	<ul class="dropdown">
 		<li><a href="fundmain.php">Start Your Fundraiser</a></li>
-		<li><a href="viewfundcollection.php">Fund Collection Report</a></li>
+		<li><a href="viewfundmain.php">Fundraiser Report</a></li>
 	</ul>
 </li>
 
@@ -215,8 +202,6 @@ else
 <li><a href="index.php">Home</a></li>
 <li><a href="about.php">About</a></li>
 <li><a href="fundraiser.php">Fund Donation</a></li>
-<!--<li><a href="displaymembers.php">Charity Members</a></li>-->
-
 <li><a href="contact.php">Contact</a></li>
 <li class="has-dropdown"><a href="#">User</a>
 	<ul class="dropdown">

@@ -29,11 +29,11 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		$sql ="INSERT INTO  fund_raiser(title,fund_raiser_description,fund_amount,start_date, end_date,status,banner_img) VALUES('$_POST[title]','$description','$_POST[fund_amount]','$_POST[start_date]','$_POST[end_date]','$_POST[status]','$banner_img')";
+		$sql ="INSERT INTO  fund_raiser(title,donor_id,fund_raiser_description,fund_amount,start_date, end_date,status,banner_img) VALUES('$_POST[title]','$_SESSION[donor_id]','$description','$_POST[fund_amount]','$_POST[start_date]','$_POST[end_date]','$_POST[status]','$banner_img')";
 		$qsql = mysqli_query($con,$sql);
 		if(mysqli_affected_rows($con) == 1)
 		{
-			echo "<script>alert('Fund Raiser Request added successfully..');</script>";
+			echo "<script>alert('Fundraiser Request added successfully');</script>";
 			//echo "<script>window.location='fund.php';</script>";
 		}
 		else

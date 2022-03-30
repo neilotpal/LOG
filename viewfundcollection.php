@@ -6,7 +6,7 @@ if(isset($_GET['delid']))
 	$qsql = mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('fund collection record deleted successfully..');</script>";
+		echo "<script>alert('Fund Collection Record deleted successfully');</script>";
 		echo "<script>window.location='viewfundcollection.php';</script>";
 	}
 	else
@@ -21,7 +21,7 @@ if(isset($_GET['delid']))
 		<div class="row">
 			<div class="col-md-12">
 			<div class="section-title">
-			<h2 class="title text-center">View your Donations</h2>
+			<h2 class="title text-center">View Donations</h2>
 			</div>
 			</div>
 		</div>

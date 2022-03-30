@@ -3,24 +3,11 @@ session_start();
 ?>
 <?php
 include("header.php");
-if(!isset($_SESSION['staff_id']))
+if(!isset($_SESSION['donor_id']))
 {
 	echo "<script>window.location='index.php';</script>";
 }
-if(isset($_GET['delid']))
-{
-	$sql = "DELETE FROM fund WHERE fund_id='$_GET[delid]'";
-	$qsql = mysqli_query($con,$sql);
-	if(mysqli_affected_rows($con) == 1)
-	{
-		echo "<script>alert('Fund Record deleted successfully');</script>";
-		echo "<script>window.location='viewfund.php';</script>";
-	}
-	else
-	{
-		echo mysqli_error($con);
-	}
-}
+
 ?>
 </header>
 <div id="about" class="section">
@@ -28,7 +15,7 @@ if(isset($_GET['delid']))
 		<div class="row">
 			<div class="col-md-12">
 			<div class="section-title">
-			<center><h2 class="title">View Fund</h2></center>
+			<center><h2 class="title">View your Fundraisers</h2></center>
 			</div>
 			</div>
 		</div>
@@ -54,12 +41,20 @@ if(isset($_GET['delid']))
 			<th>Start Date</th>
 			<th>End Date</th>
 			<th>Status</th>
-			<th>Action</th>
+      <th>Action</th>
 		</tr>
 	</thead>
 	<tbody>
 		<?php
-	$sql = "SELECT * FROM fund_raiser";
+
+
+    if(isset($_SESSION['donor_id']))
+    {
+      $sql = "SELECT * from fund_raiser where donor_id='$_SESSION[donor_id]'";
+    }
+    $qsql = mysqli_query($con,$sql);
+
+	/*$sql = "SELECT * FROM fund_raiser";*/
 	$qsql = mysqli_query($con,$sql);
 	while($rs = mysqli_fetch_array($qsql))
 	{
@@ -84,12 +79,9 @@ else
 			<td>" . date("d-M-Y",strtotime($rs['start_date'])) . " </td>
 			<td>" . date("d-M-Y",strtotime($rs['end_date'])) . " </td>
 			<td>$rs[status]</td>
-			<td>
-			<a href='fund.php?editid=$rs[0]'  class='btn btn-primary' >Edit</a>
-
-			<a href='viewfund.php?delid=$rs[0]' class='btn btn-danger' onclick='return confirmdel()' >Delete</a>
+      <td>
+			<a href='viewdonorsmain.php?fund_raiser_id=$rs[0]'  class='btn btn-primary' >View Donors</a>
 			</td>
-
 			</tr>";
 	}
 ?>
