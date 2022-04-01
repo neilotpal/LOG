@@ -106,7 +106,7 @@ include("header.php");
 <div class="widget">
 <h3 class="widget-title">Email ID.</h3>
 <div class="widget-category">
-abhayaAshraya@gmail.com
+lifeofgiving@gmail.com
 </div>
 </div>
 
