@@ -35,24 +35,6 @@ if(!isset($_SESSION['staff_id']))
 
 <div class="row">
 
-
-
-
-
-	<div class="col-md-4 col-sm-6">
-		<div class="number">
-			<img src="img/appointment.jpg" style="width:100%;height: 150px;">
-			<h3>
-			<?php
-			$sql ="SELECT * FROM appointment";
-			$qsql = mysqli_query($con,$sql);
-			echo mysqli_num_rows($qsql);
-			?>
-			</h3>
-			<span>appointment Records</span>
-		</div>
-	</div>
-
 	<div class="col-md-4 col-sm-6">
 		<div class="number">
 			<img src="img/donor.jpg" style="width:100%;height: 150px;">
@@ -63,7 +45,7 @@ if(!isset($_SESSION['staff_id']))
 			echo mysqli_num_rows($qsql);
 			?>
 			</h3>
-			<span>donor Records</span>
+			<span>Donors</span>
 		</div>
 	</div>
 
@@ -78,7 +60,7 @@ if(!isset($_SESSION['staff_id']))
 			echo mysqli_num_rows($qsql);
 			?>
 			</h3>
-			<span>Item donor Records</span>
+			<span>Item donors</span>
 		</div>
 	</div>
 
@@ -94,7 +76,7 @@ if(!isset($_SESSION['staff_id']))
 			echo mysqli_num_rows($qsql);
 			?>
 			</h3>
-			<span>Fund Raiser Records</span>
+			<span>Fund Raisers</span>
 		</div>
 	</div>
 
@@ -109,36 +91,23 @@ if(!isset($_SESSION['staff_id']))
 			echo mysqli_num_rows($qsql);
 			?>
 			</h3>
-			<span>Fund collection donor Records</span>
+			<span>Number of donations</span>
 		</div>
 	</div>
 
-	<!--<div class="col-md-3 col-sm-6">
-		<div class="number">
-			<img src="img/member_type.jpg" style="width:100%;height: 150px;">
-			<h3>
-
-			</h3>
-			<span>Member type Records</span>
-		</div>
-	</div>-->
-
-
 	<div class="col-md-4 col-sm-6">
 		<div class="number">
-			<img src="img/staff.jpg" style="width:100%;height: 150px;">
+			<img src="img/contact.jpeg" style="width:100%;height: 150px;">
 			<h3>
 			<?php
-			$sql ="SELECT * FROM staff ";
+			$sql ="SELECT * FROM contact";
 			$qsql = mysqli_query($con,$sql);
 			echo mysqli_num_rows($qsql);
 			?>
 			</h3>
-			<span>staff Records</span>
+			<span>contacted</span>
 		</div>
 	</div>
-
-
 
 
 

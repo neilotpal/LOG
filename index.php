@@ -23,14 +23,14 @@ include("header.php");
 
 
 	<div class="home-item">
-		<div class="section-bg" style="background-image: url(img/charity/pic8.jpg); background-size:100% 100%""></div>
+		<div class="section-bg" style="background-image: url(img/charity/pic55.jpeg); background-size:100% 100%""></div>
 		<div class="home">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8">
 						<div class="home-content">
-							<h1 style="color:blue;">Online Fundraising</h1>
-							<p class="lead" style="color:blue;"><i>Need Funds to Pay For a Medical Emergency or Social Cause?</i></p>
+							<h1 >Online Fundraising</h1>
+							<p class="lead"><i>Need Funds to Pay For a Medical Emergency or Social Cause?</i></p>
 						</div>
 					</div>
 				</div>

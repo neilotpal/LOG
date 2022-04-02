@@ -58,14 +58,14 @@ include("header.php");
 <div class="col-md-5">
 <div class="section-title">
 <h2 class="title">Welcome to LIFE OF GIVING</h2>
-<p class="sub-title">Life Of Giving is a charitable fundraising platform with the noble objective of providing “Ashraya” (shelter) with “Abhaya” (sense of protection), rehabilitation and care for the destitutes, the elderly, orphans, beggars, physically handicapped and mentally challenged, irrespective of cast, creed and sex...</p>
+<p class="sub-title">Life Of Giving is a charitable fundraising platform with the noble objective of providing “Ashraya” (shelter) with “Abhaya” (sense of protection), rehabilitation and care for the destitutes, the elderly, orphans, beggars, physically handicapped and mentally challenged, irrespective of cast, creed and sex.</p>
 </div>
 </div>
 
 
 <div class="col-md-offset-1 col-md-6">
 <a href="#" class="about-video">
-<img src="img/charity/IMG_20191210_133502.jpg" style="heighT: 500px;">
+<img src="img/charity/IMG_20191210_133502.jpg" style="heighT: 300px;">
 </a>
 </div>
 
