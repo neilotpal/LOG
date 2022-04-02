@@ -95,7 +95,7 @@ Confirm password: <input type="password" name="donorcpassword" id="donorcpasswor
 		  <div class="modal-content">
 			<div class="modal-header">
 			  <button type="button" class="close" data-dismiss="modal">&times;</button>
-			  <h4 class="modal-title">Staff Login Window</h4>
+			  <h4 class="modal-title">Admin Login Window</h4>
 			</div>
 			<div class="modal-body"  style="padding-left: 55px;padding-right: 55px;">
 
@@ -127,39 +127,42 @@ Password : <input type="password" name="staffpassword" id="staffpassword" class=
 
 <div class="row">
 
+	<div class="col-md-4">
+	<div class="footer">
+	<h3 class="footer-title">Life Of Giving</h3>
+	<p>LOG is the non-profit organization which helps old people, poor people, Mentally challenging peoples across.</p>
+	</div>
+	</div>
+
 <div class="col-md-4">
 <div class="footer">
 <div class="footer-logo">
-<a class="logo" href="#"><img src="img/logo.png" alt=""></a>
-</div>
-<p>Sahaya Charity is the non-profit organization which helps old people, poor people, Mentally challenging peoples which is situated in Assaigoli, Konaje, Bangalore.</p>
-</div>
+<a class="logo" href="#"><img src="img/loglogo.png" alt=""></a>
 </div>
 
-
+</div>
+</div>
 
 
 
 <div class="col-md-4">
 <div class="footer">
-<h3 class="footer-title">Newsletter</h3>
+<h3 class="footer-title">Contact Us</h3>
 <p>
-
 <ul class="footer-contact">
-<li><i class="fa fa-map-marker"></i> Sahaya Charity,<br> &nbsp;&nbsp;&nbsp; Opp. konaje police station,<br> &nbsp;&nbsp;&nbsp; Bangalore-574199</li>
-<li><i class="fa fa-phone"></i> 080-2287236</li>
-<li><i class="fa fa-envelope"></i> <a href="#"><span class="__cf_email__" data-cfemail="8fcce7eefde6fbf6cfeae2eee6e3a1ece0e2">AbhayaAshraya@gmail.com</span></a></li>
+<li><i class="fa fa-phone"></i> 014-2287236</li>
+<li><i class="fa fa-envelope"></i><b>Lifeofgiving@gmail.com</b></li>
 </ul>
 
 </p>
 <hr>
-<ul class="footer-social">
+<!--<ul class="footer-social">
 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
 <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-</ul>
+</ul>-->
 </div>
 </div>
 
@@ -173,7 +176,7 @@ if(!isset($_SESSION['staff_id']) && !isset($_SESSION['donor_id']) )
 {
 ?>
 	<ul class="footer-nav">
-	<li><a href="" onclick="return false"  data-toggle="modal" data-target="#StaffLoginModal" >Staff Login</a></li>
+	<li><a href="" onclick="return false"  data-toggle="modal" data-target="#StaffLoginModal" >Admin Login</a></li>
 	</ul>
 <?php
 }

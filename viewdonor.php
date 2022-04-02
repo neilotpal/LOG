@@ -54,7 +54,6 @@ if(isset($_GET['delid']))
 			<th>City </th>
 			<th>PIN Code </th>
 			<th>Email ID </th>
-			<th>Password</th>
 			<th>Contact No.</th>
 			<th>Status </th>
 			<th>Action </th>
@@ -72,15 +71,14 @@ if(isset($_GET['delid']))
 			<td>$rs[city]</td>
 			<td>$rs[pin_code]</td>
 			<td>$rs[email_id]</td>
-			<td>$rs[password]</td>
 			<td>$rs[contact_no]</td>
 			<td>$rs[status]</td>
 			<td>
 			<a href='viewdonor.php?delid=$rs[0]' class='btn btn-danger' onclick='return confirmdel()' >Delete</a>
 			<a href='donor.php?editid=$rs[0]'  class='btn btn-primary' >Edit</a>
-			
+
 			</td>
-			
+
 			</tr>";
 	}
 ?>
@@ -112,9 +110,3 @@ function confirmdel()
 	}
 }
 </script>
-
-
-
-
-
-

@@ -55,7 +55,7 @@ if(!isset($_SESSION['staff_id']))
 			<img src="img/item_donate.jpg" style="width:100%;height: 150px;">
 			<h3>
 			<?php
-			$sql ="SELECT * FROM item_donor";
+			$sql ="SELECT * FROM item_donor where status='Accepted'";
 			$qsql = mysqli_query($con,$sql);
 			echo mysqli_num_rows($qsql);
 			?>
@@ -97,7 +97,7 @@ if(!isset($_SESSION['staff_id']))
 
 	<div class="col-md-4 col-sm-6">
 		<div class="number">
-			<img src="img/contact.jpeg" style="width:100%;height: 150px;">
+			<img src="img/c1.jpg" style="width:100%;height: 150px;">
 			<h3>
 			<?php
 			$sql ="SELECT * FROM contact";
@@ -106,6 +106,20 @@ if(!isset($_SESSION['staff_id']))
 			?>
 			</h3>
 			<span>contacted</span>
+		</div>
+	</div>
+
+	<div class="col-md-4 col-sm-6">
+		<div class="number">
+			<img src="img/donation.jpg" style="width:100%;height: 150px;">
+			<h3>
+			<?php
+			$sql ="SELECT * FROM item_donor where status='pending'";
+			$qsql = mysqli_query($con,$sql);
+			echo mysqli_num_rows($qsql);
+			?>
+			</h3>
+			<span>Item donor request pending</span>
 		</div>
 	</div>
 

@@ -9,7 +9,7 @@ if(!isset($_SESSION['staff_id']))
 }
 if(isset($_GET['delid']))
 {
-	$sql = "DELETE FROM fund WHERE fund_id='$_GET[delid]'";
+	$sql = "DELETE FROM fund_raiser WHERE fund_raiser_id='$_GET[delid]'";
 	$qsql = mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{

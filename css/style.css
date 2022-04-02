@@ -444,7 +444,7 @@ textarea.input {
   margin-bottom: 30px
 }
 
-.home-content p.lead {  
+.home-content p.lead {
   color: #fff;
   margin-bottom: 30px
 }
@@ -1169,7 +1169,7 @@ textarea.input {
 }
 
 .footer-logo .logo img {
-  max-height: 80px
+  max-height: 100px;
 }
 
 .footer-contact {
