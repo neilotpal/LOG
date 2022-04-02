@@ -132,7 +132,7 @@ else
 if(isset($_SESSION['donor_id']))
 {
 ?>
-<li><a href="donoraccount.php">Home</a></li>
+<li><a href="index.php">Home</a></li>
 
 <li class="has-dropdown"><a href="#">Donate</a>
 	<ul class="dropdown">
