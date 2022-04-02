@@ -31,7 +31,6 @@ include("header.php");
 						<div class="home-content">
 							<h1 style="color:blue;">Online Fundraising</h1>
 							<p class="lead" style="color:blue;"><i>Need Funds to Pay For a Medical Emergency or Social Cause?</i></p>
-							<a href="#" type="button" class="primary-button">start a fundraiser now</a>
 						</div>
 					</div>
 				</div>
@@ -48,7 +47,7 @@ include("header.php");
 						<div class="home-content">
 							<h1 style="color:black;">Donate Items</h1>
 							<p class="lead"style="color:black;font-weight:bold" ><i>Donate items like clothes, toys, stationery etc..</i></p>
-							<a href="#" type="button" class="primary-button">Donate Now</a>
+
 						</div>
 					</div>
 				</div>

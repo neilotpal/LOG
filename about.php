@@ -78,50 +78,73 @@ include("header.php");
 
 <div id="numbers" class="section">
 
-<div class="container">
+	<div class="container">
 
-<div class="row">
+		<div class="row">
 
-<div class="col-md-3 col-sm-6">
-<div class="number">
-<i class="fa fa-smile-o"></i>
-<h3>47k</h3>
-<span>Donors</span>
-</div>
-</div>
-
-
-<div class="col-md-3 col-sm-6">
-<div class="number">
-<i class="fa fa-heartbeat"></i>
-<h3>154K</h3>
-<span>Children Saved</span>
-</div>
-</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="number">
+					<i class="fa fa-smile-o"></i>
+					<h3>
+						<?php
+						$sql = "SELECT * FROM donor";
+						$qsql = mysqli_query($con, $sql);
+						echo mysqli_num_rows($qsql);
+						?>
+					</h3>
+					<span>Donors</span>
+				</div>
+			</div>
 
 
-<div class="col-md-3 col-sm-6">
-<div class="number">
-<i class="fa fa-money"></i>
-<h3>785K</h3>
-<span>Donated</span>
-</div>
-</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="number">
+					<i class="fa fa-heartbeat"></i>
+					<h3>
+						<?php
+						$sql = "SELECT * FROM fund_raiser";
+						$qsql = mysqli_query($con, $sql);
+						echo mysqli_num_rows($qsql);
+						?>
+					</h3>
+					<span>Fund Raisers</span>
+				</div>
+			</div>
 
 
-<div class="col-md-3 col-sm-6">
-<div class="number">
-<i class="fa fa-handshake-o"></i>
-<h3>357</h3>
-<span>Volunteers</span>
-</div>
-</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="number">
+					<i class="fa fa-money"></i>
+					<h3><?php
+						$sql = "SELECT sum(paid_amt) FROM fund_collection";
+						$qsql = mysqli_query($con, $sql);
+						$rs = mysqli_fetch_array($qsql);
+						echo "₹" . round($rs[0]);
+						?></h3>
+					<span>Donated</span>
+				</div>
+			</div>
+
+
+			<div class="col-md-3 col-sm-6">
+				<div class="number">
+					<i class="fa fa-handshake-o"></i>
+					<h3><?php
+						$sql = "SELECT * FROM item_donor";
+						$qsql = mysqli_query($con, $sql);
+						$rs = mysqli_fetch_array($qsql);
+						echo mysqli_num_rows($qsql);
+						?></h3>
+					<span>Item donors</span>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
 
 </div>
 
-</div>
-
-</div>
 
 <hr>
 

@@ -23,7 +23,7 @@ if(isset($_POST['btndonorlogin']))
 	{
 		$rs = mysqli_fetch_array($qsql);
 		$_SESSION['donor_id'] = $rs['donor_id'];
-		echo "<script>window.location='donoraccount.php';</script>";
+		echo "<script>window.location='index.php';</script>";
 	}
 	else
 	{
@@ -120,9 +120,7 @@ else
 </button>
 
 
-<button class="search-toggle-btn">
-<i class="fa fa-search"></i>
-</button>
+
 
 </div>
 
