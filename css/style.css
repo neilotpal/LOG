@@ -1168,9 +1168,6 @@ textarea.input {
   display: inline-block
 }
 
-.footer-logo .logo img {
-  max-height: 100px;
-}
 
 .footer-contact {
   margin-top: 30px
@@ -1181,51 +1178,9 @@ textarea.input {
 }
 
 .footer-contact li i {
-  margin-right: 5px
+  margin-right: 2px
 }
 
-.footer-galery {
-  margin: 0 -5px
-}
-
-.footer-galery li {
-  display: inline-block;
-  width: 33.33%;
-  margin-right: -4px;
-  padding: 5px
-}
-
-.footer-galery li a {
-  position: relative;
-  display: block;
-  border-radius: 10px;
-  overflow: hidden
-}
-
-.footer-galery li a:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #83ba09;
-  opacity: 0;
-  -webkit-transition: .3s opacity;
-  transition: .3s opacity
-}
-
-.footer-galery li a:hover:after {
-  opacity: .6
-}
-
-.footer-galery li a>img {
-  width: 100%
-}
-
-.footer-newsletter {
-  margin: 30px 0
-}
 
 .footer-newsletter .primary-button {
   margin-top: 15px;
