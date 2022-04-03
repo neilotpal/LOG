@@ -129,7 +129,7 @@ Password : <input type="password" name="staffpassword" id="staffpassword" class=
 
 	<div class="col-md-4">
 	<div class="footer">
-	<h3 class="footer-title">Life Of Giving</h3>
+	<h3 class="footer-title">Join The Life Of Giving</h3>
 	<p>LOG is the non-profit organization which helps old people, poor people, Mentally challenging peoples across.</p>
 	</div>
 	</div>
@@ -137,7 +137,8 @@ Password : <input type="password" name="staffpassword" id="staffpassword" class=
 <div class="col-md-4">
 <div class="footer">
 <div class="footer-logo">
-<a class="logo" href="#"><img src="img/loglogo.png" alt=""></a>
+<img src="img/loglogo.png" alt="" height="150px" width="200px" style="margin-left:60px;">
+<a href="about.php" style="margin-left:100px;">Know More About Us</a>
 </div>
 
 </div>
@@ -151,7 +152,7 @@ Password : <input type="password" name="staffpassword" id="staffpassword" class=
 <p>
 <ul class="footer-contact">
 <li><i class="fa fa-phone"></i> 014-2287236</li>
-<li><i class="fa fa-envelope"></i><b>Lifeofgiving@gmail.com</b></li>
+<li><i class="fa fa-envelope"></i><b>   Lifeofgiving@gmail.com</b></li>
 </ul>
 
 </p>
@@ -185,7 +186,7 @@ if(!isset($_SESSION['staff_id']) && !isset($_SESSION['donor_id']) )
 <div class="col-md-6 col-md-pull-6">
 <div class="footer-copyright">
 <span>
-Copyright &copy;<script data-cfasync="false" src="scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="7909e31ca7813c4694085191-text/javascript">document.write(new Date().getFullYear());</script>
+Copyright &copy; LOG  <script data-cfasync="false" src="scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="7909e31ca7813c4694085191-text/javascript">document.write(new Date().getFullYear());</script>
 </span>
 </div>
 </div>
