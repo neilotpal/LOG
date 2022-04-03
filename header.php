@@ -131,7 +131,7 @@ if(isset($_SESSION['donor_id']))
 {
 ?>
 <li><a href="index.php">Home</a></li>
-
+<li><a href="about.php">About</a></li>
 <li class="has-dropdown"><a href="#">Donate</a>
 	<ul class="dropdown">
 		<li><a href="fundraiser.php" >Donate Funds</a></li>
@@ -148,6 +148,7 @@ if(isset($_SESSION['donor_id']))
 	</ul>
 </li>
 
+<li><a href="contact.php">Contact</a></li>
 
 
 <li class="has-dropdown"><a href="#">Account</a>

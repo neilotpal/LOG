@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
 		echo mysqli_error($con);
 	}
 }
-
+$fid="$_GET[fund_raiser_id]";
 $sql = "SELECT * FROM fund_raiser where status='Active' AND fund_raiser_id='$_GET[fund_raiser_id]'";
 $qsql = mysqli_query($con, $sql);
 $rs = mysqli_fetch_array($qsql);
@@ -101,8 +101,20 @@ $perc = ($rsfund_collection[0] * 100 / $rs['fund_amount']);
 								<span class="causes-goal">Goal: <strong>₹<?php echo $rs['fund_amount']; ?></strong></span>
 							</div>
 						</div>
-						<a href="" onclick="return false;" class="primary-button causes-donate" data-toggle="modal" data-target="#myModal">Donate Now</a>
-					</div>
+						<?php
+						if (!isset($_SESSION['donor_id'])) {
+						?>
+								<li><a href="" onclick="return false" class="primary-button causes-donate" data-toggle="modal" data-target="#DonorLoginModal">Donate Now</a></li>
+
+						<?php
+						}else{
+							?>
+							<a href="" onclick="return false;" class="primary-button causes-donate" data-toggle="modal" data-target="#myModal">Donate Now</a>
+
+						<?php
+						}
+						?>
+						</div>
 
 
 					<div class="article-content">
@@ -120,26 +132,6 @@ $perc = ($rsfund_collection[0] * 100 / $rs['fund_amount']);
 						</div>
 
 					</div>
-
-
-
-
-					<!--<div class="article-tags-share">
-						<ul class="tags">
-							<li>TAGS:</li>
-							<li><a href="#">Charity</a></li>
-							<li><a href="#">Health</a></li>
-							<li><a href="#">Donation</a></li>
-						</ul>
-						<ul class="share">
-							<li>SHARE:</li>
-							<li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="https://www.google.co.in/"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="https://in.pinterest.com/"><i class="fa fa-pinterest"></i></a></li>
-							<li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
-						</ul>
-					</div>-->
 
 
 

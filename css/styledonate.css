@@ -15,17 +15,17 @@
     background-size: 100% 100%;
     opacity: 0.9;
   }
-  
+
   .tag-line{
-    margin-top: 100px;
+    margin-top: 80px;
     padding: 5px 0px;
     background-image: linear-gradient(to right, rgb(137, 240, 53),rgb(0, 195, 255));
-    
+
   }
   .tag-line h1{
     color: white;
     }
-  
+
 .article-meta li{
     background-color: rgb(146, 245, 232);
     padding: 10px 10px;
@@ -44,7 +44,7 @@
     margin-bottom: 15px;
     text-align: center;
   }
-  
+
   .faq-card {
     border: 1px solid #dce0e8;
     border-radius: 6px;
@@ -54,7 +54,7 @@
     position: relative;
     cursor: pointer;
   }
-  
+
   .faq-open-icon {
     font-size: 22px;
     position: absolute;
@@ -62,31 +62,31 @@
     right: 24px;
     font-weight: 700;
   }
-  
+
   details[open] .faq-open-icon {
     top: 18px;
     right: 24px;
   }
-  
+
   details > summary {
     list-style: none;
   }
-  
+
   details > summary::-webkit-details-marker {
     display: none;
   }
-  
+
   details[open] summary {
     color: #0186ff;
     font-weight: 500;
   }
-  
+
   details[open] .faq-card-spoiler {
     display: inline-block;
     padding-top: 8px;
     color: #8b8b9a;
   }
-  
+
   .faq-aftertext {
     text-align: center;
     color: #8b8b9a;

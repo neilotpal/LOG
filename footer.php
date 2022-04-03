@@ -23,8 +23,10 @@ Password : <input type="password" name="donorpassword" id="donorpassword" class=
 
 			</div>
 			<div class="modal-footer">
-			  <button type="submit" name="btndonorlogin" id="btndonorlogin" class="btn btn-default" >Click to Login</button>
-			</div>
+					<span style="padding-right: 300px;">New User? <a href="" onclick="return false;" data-toggle="modal" data-target="#DonorRegisterModal">Register </a>
+					</span>
+					<button type="submit" name="btndonorlogin" id="btndonorlogin" class="btn btn-default">Click to Login</button>
+				</div>
 		  </div>
 	</div>
 	</form>
@@ -255,7 +257,7 @@ function validateform2()
 	}
 	if(document.getElementById("donoremailid").value=="")
 	{
-		document.getElementById("errdonoremailid").innerHTML = "Kindly enter the donor Email ID..";
+		document.getElementById("errdonoremailid").innerHTML = "Kindly enter the Email ID..";
 		i = 1;
 	}
 	if(document.getElementById("contactno").value=="")
