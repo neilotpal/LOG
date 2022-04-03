@@ -257,7 +257,7 @@ function validateform2()
 	}
 	if(document.getElementById("donoremailid").value=="")
 	{
-		document.getElementById("errdonoremailid").innerHTML = "Kindly enter the donor Email ID..";
+		document.getElementById("errdonoremailid").innerHTML = "Kindly enter the Email ID..";
 		i = 1;
 	}
 	if(document.getElementById("contactno").value=="")
