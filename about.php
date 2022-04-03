@@ -1,6 +1,8 @@
 <?php
 include("header.php");
+
 ?>
+<script defer src="https://friconix.com/cdn/friconix-0.2248.js"> </script>
 <div id="home-owl" class="owl-carousel owl-theme">
 
 <div class="home-item">
@@ -223,6 +225,38 @@ include("header.php");
 </div>
 
 </div>
+
+<!--values section-->
+<section id="values" style="text-align: center;">
+  <h4 class="sub-heading">India's most trusted giving platform</h4>
+  <hr class="sub-hr">
+  <div class="values_row row">
+    <div class="v_col col-lg-4 col-md-6">
+      <i class="fi-xwluxx-calendar-wide"></i>
+      <h6 class="desc">Opt to give monthly for our missions or NGO programs and make an impact</h6>
+    </div>
+    <div class="v_col col-lg-4 col-md-6">
+      <i class="fi-xnsuxx-heart-solid"></i>
+      <h6 class="desc">Support crowdfunding campaigns with one-time donations</h6>
+    </div>
+    <div class="v_col col-lg-4 col-md-6">
+      <i class="fi-xnsuxx-team-solid"></i>
+      <h6 class="desc">Pick from causes like education, children, livelihoods, etc</h6>
+    </div>
+    <div class="v_col col-lg-4 col-md-6">
+      <i class="fi-cwluxx-smiley-happy-wide"></i>
+      <h6 class="desc">Partnered with 2,000+ NGOs across the country</h6>
+    </div>
+    <div class="v_col col-lg-4 col-md-6">
+        <i class="fi-onsuxx-dot-currency"></i>
+      <h6 class="desc">Donations in all currencies with tax benefit for India, US and UK</h6>
+    </div>
+    <div class="v_col col-lg-4 col-md-6">
+        <i class="fi-xnsuxx-house-solid"></i>
+      <h6 class="desc">CSR and employee giving through trusted NGOs</h6>
+    </div>
+  </div>
+</section>
 
 
 <?php

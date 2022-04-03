@@ -1147,6 +1147,39 @@ textarea.input {
   font-size: 12px
 }
 
+
+/*valves section*/
+
+#values{
+  background-color: #FAFFAF;
+  color: black;
+}
+.values_row{
+  margin: auto 10%;
+  padding-bottom: 30px;
+  padding-top: 30px;
+
+}
+.sub-heading{
+  padding-top: 30px;
+  font-weight: bolder;
+  font-size: 3.5rem;
+
+}
+.desc{
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: 1.2;
+}
+.sub-hr{
+  width: 30%;
+  margin: auto;
+  color: #006778;
+}
+.v_col{
+  margin-bottom: 30px;
+}
+
 #footer {
   background-color: #f4f4f8
 }
