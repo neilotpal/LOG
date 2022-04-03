@@ -154,7 +154,7 @@ if(isset($_SESSION['donor_id']))
 <li class="has-dropdown"><a href="#">Account</a>
 	<ul class="dropdown">
 		<li><a href="donorprofile.php">User Profile</a></li>
-		<li><a href="userchangepassword.php" >Change password</a></li>
+		<li><a href="donorchangepassword.php" >Change password</a></li>
 		<li><a href="logout.php" >Logout</a></li>
 	</ul>
 </li>
@@ -189,7 +189,7 @@ else if(isset($_SESSION['staff_id']))
 		<li><a href="staffprofile.php">Admin Profile</a></li>
 		<li><a href="staffchangepassword.php" >Change password</a></li>
 		<!--<li><a href="staff.php" >Add Staff  </a></li>
-		<li><a href="viewstaff.php" >View profile </a></li>-->
+		<li><a href="viewstaff.php" >View staff </a></li>-->
 		<li><a href="logout.php" >Logout</a></li>
 	</ul>
 </li>
