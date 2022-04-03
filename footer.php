@@ -23,8 +23,10 @@ Password : <input type="password" name="donorpassword" id="donorpassword" class=
 
 			</div>
 			<div class="modal-footer">
-			  <button type="submit" name="btndonorlogin" id="btndonorlogin" class="btn btn-default" >Click to Login</button>
-			</div>
+					<span style="padding-right: 300px;">New User? <a href="" onclick="return false;" data-toggle="modal" data-target="#DonorRegisterModal">Register </a>
+					</span>
+					<button type="submit" name="btndonorlogin" id="btndonorlogin" class="btn btn-default">Click to Login</button>
+				</div>
 		  </div>
 	</div>
 	</form>
