@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		echo "<script>alert('You have entered incorrect existing password..');</script>";
+		echo "<script>alert('Failed to update successfully..');</script>";
 	}
 }
 ?>
