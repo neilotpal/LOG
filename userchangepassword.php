@@ -12,11 +12,11 @@ if(isset($_POST['submit']))
 	if(mysqli_affected_rows($con) == 1)
 	{
 		echo "<script>alert('Password updated successfully..');</script>";
-		echo "<script>window.location='donorchangepassword.php';</script>";
+		echo "<script>window.location='userchangepassword.php';</script>";
 	}
 	else
 	{
-		echo "<script>alert('Failed to update successfully..');</script>";
+		echo "<script>alert('You have entered incorrect existing password..');</script>";
 	}
 }
 ?>
@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
 <div class="row">
 <div class="col-md-12">
 <div class="header-content">
-<h1>donor - Change Password</h1>
+<h1>User - Change Password</h1>
 </div>
 </div>
 </div>
