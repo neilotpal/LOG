@@ -13,7 +13,7 @@ if(isset($_GET['delid']))
 	$qsql = mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('Appointment record deleted successfully..');</script>";
+		echo "<script>alert('Donor record deleted successfully..');</script>";
 		echo "<script>window.location='viewdonor.php';</script>";
 	}
 	else
@@ -75,8 +75,7 @@ if(isset($_GET['delid']))
 			<td>$rs[status]</td>
 			<td>
 			<a href='viewdonor.php?delid=$rs[0]' class='btn btn-danger' onclick='return confirmdel()' >Delete</a>
-			<a href='donor.php?editid=$rs[0]'  class='btn btn-primary' >Edit</a>
-
+		
 			</td>
 
 			</tr>";

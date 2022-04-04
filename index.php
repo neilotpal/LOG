@@ -39,7 +39,7 @@ include("header.php");
 	</div>
 
 	<div class="home-item">
-		<div class="section-bg" style="background-image: url(img/donate_item_bg.jpg); background-size:100% 100%""></div>
+		<div class="section-bg" style="background-image: url(img/donate_item_carousel2.jpg); background-size:100% 100%""></div>
 		<div class="home">
 			<div class="container">
 				<div class="row">
@@ -177,60 +177,7 @@ include("header.php");
 </div>
 
 
-<div id="events" class="section">
-
-	<div class="container">
-
-		<div class="row">
-
-			<div class="col-md-8 col-md-offset-2">
-				<div class="section-title text-center">
-					<h2 class="title">LIFE OF GIVING</h2>
-				</div>
-			</div>
-
-
-			<div class="col-md-6">
-				<div class="event">
-					<div class="event-img">
-						<a href="#">
-							<img src="img/event-1.jpg" alt="">
-						</a>
-					</div>
-					<div class="event-content">
-						<h3><a href="#">Help people in need</a></h3>
-						<p>Provide direct support to an individual, family or community by paying medical expenses or offering financial aid..</p>
-					</div>
-				</div>
-			</div>
-
-
-			<div class="col-md-6">
-				<div class="event">
-					<div class="event-img">
-						<a href="#">
-							<img src="img/event-2.jpg" alt="">
-						</a>
-					</div>
-					<div class="event-content">
-						<h3><a href="#">Take action in an emergency</a></h3>
-
-						<p>Raise funds in response to a natural disaster or humanitarian crisis. Make a difference in minutes.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="clearfix visible-md visible-lg"></div>
-
-		</div>
-
-	</div>
-
-</div>
-
-<hr>
-
-<div id="causes" class="section" style="padding: 5px;">
+<div id="causes" class="section">
 
 	<div class="container">
 
@@ -301,6 +248,57 @@ include("header.php");
 	</div>
 
 </div>
+<div id="events" class="section" style="padding:5px">
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-8 col-md-offset-2">
+				<div class="section-title text-center">
+					<h2 class="title">LIFE OF GIVING</h2>
+				</div>
+			</div>
+
+
+			<div class="col-md-6">
+				<div class="event">
+					<div class="event-img">
+						<a href="#">
+							<img src="img/event-1.jpg" alt="">
+						</a>
+					</div>
+					<div class="event-content">
+						<h3><a href="#">Help people in need</a></h3>
+						<p>Provide direct support to an individual, family or community by paying medical expenses or offering financial aid..</p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-md-6">
+				<div class="event">
+					<div class="event-img">
+						<a href="#">
+							<img src="img/event-2.jpg" alt="">
+						</a>
+					</div>
+					<div class="event-content">
+						<h3><a href="#">Take action in an emergency</a></h3>
+
+						<p>Raise funds in response to a natural disaster or humanitarian crisis. Make a difference in minutes.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="clearfix visible-md visible-lg"></div>
+
+		</div>
+
+	</div>
+
+</div>
+
 
 
 

@@ -23,7 +23,7 @@ $sqlfund_collection = "SELECT SUM(paid_amt) FROM fund_collection where fund_rais
 $qsqlfund_collection = mysqli_query($con, $sqlfund_collection);
 $rsfund_collection = mysqli_fetch_array($qsqlfund_collection);
 
-$perc = ($rsfund_collection[0] * 100 / $rs['fund_amount']);
+$perc = $perc = round(($rsfund_collection[0] * 100 / $rs['fund_amount']),0)
 
 ?>
 </header>
@@ -80,25 +80,13 @@ $perc = ($rsfund_collection[0] * 100 / $rs['fund_amount']);
 					<div class="clearfix">
 						<div class="causes-progress">
 							<div class="causes-progress-bar">
-								<div style="width:<?php
-													if ($perc > 100) {
-														echo 100;
-													} else {
-														echo round($perc, 0);
-													}
-													?>%;">
-									<span><?php
-											if ($perc > 100) {
-												echo 100;
-											} else {
-												echo round($perc, 0);
-											}
-											?>%</span>
+								<div style="width: <?php echo $perc; ?>%;">
+									<span><?php echo $perc ?>%</span>
 								</div>
 							</div>
 							<div>
 								<span class="causes-raised">Donated: <strong>₹<?php echo $rsfund_collection[0]; ?></strong></span>
-								<span class="causes-goal">Goal: <strong>₹<?php echo $rs['fund_amount']; ?></strong></span>
+								<span class="causes-goal">Raised: <strong>₹<?php echo $rs['fund_amount']; ?></strong></span>
 							</div>
 						</div>
 						<?php

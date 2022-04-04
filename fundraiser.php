@@ -7,7 +7,7 @@
 	<?php include 'css\styledonate.css' ?>
 </style>
 <div id="cta" class="section">
-	<div class="section-bg w-100" style="background-image: url(img/charity/donatebg.jpg); opacity:0.8; height: 400px;"></div>
+	<div class="section-bg" style="background-image: url(img/charity/donatebg.jpg);margin-top: 60px;opacity:0.9; height: 400px;"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-offset-2 col-md-8">
@@ -72,7 +72,7 @@
 						<div class="causes-content">
 							<h3><a href="funraiserdetailed.php?fund_raiser_id=<?php echo $rs[0]; ?>"><?php echo  $rs['title']; ?></a></h3>
 							<p><?php echo  $string = substr($rs['fund_raiser_description'],0,100).'...'; ?></p>
-							<a href="funraiserdetailed.php?fund_raiser_id=<?php echo $rs[0]; ?>" class="primary-button causes-donate" style="background-color:#0186ff;">Donate Now</a>
+							<a href="funraiserdetailed.php?fund_raiser_id=<?php echo $rs[0]; ?>" class="primary-button causes-donate">Donate Now</a>
 						</div>
 
 					</div>

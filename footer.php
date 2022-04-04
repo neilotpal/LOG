@@ -6,7 +6,7 @@
 		  <div class="modal-content">
 			<div class="modal-header">
 			  <button type="button" class="close" data-dismiss="modal">&times;</button>
-			  <h4 class="modal-title">Donor Login Window</h4>
+			  <h4 class="modal-title">Login Window</h4>
 			</div>
 			<div class="modal-body"  style="padding-left: 55px;padding-right: 55px;">
 
@@ -23,7 +23,7 @@ Password : <input type="password" name="donorpassword" id="donorpassword" class=
 
 			</div>
 			<div class="modal-footer">
-					<span style="padding-right: 300px;">New User? <a href="" onclick="return false;" data-toggle="modal" data-target="#DonorRegisterModal">Register </a>
+					<span style="float: left;">New User? <a href="" onclick="return false;" data-toggle="modal" data-target="#DonorRegisterModal">Register </a>
 					</span>
 					<button type="submit" name="btndonorlogin" id="btndonorlogin" class="btn btn-default">Click to Login</button>
 				</div>
@@ -42,7 +42,7 @@ Password : <input type="password" name="donorpassword" id="donorpassword" class=
 		  <div class="modal-content">
 			<div class="modal-header">
 			  <button type="button" class="close" data-dismiss="modal">&times;</button>
-			  <h4 class="modal-title">Donor Register Window</h4>
+			  <h4 class="modal-title">Register Window</h4>
 			</div>
 
 			<div class="modal-body" style="padding-left: 55px;padding-right: 55px;">

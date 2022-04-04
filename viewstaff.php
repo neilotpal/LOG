@@ -14,7 +14,7 @@ if(isset($_GET['delid']))
 	if(mysqli_affected_rows($con) == 1)
 	{
 	echo "<script>alert('Staff record deleted successfully..');</script>";
-	echo "<script>window.location='viewstaff.php';</script>";	
+	echo "<script>window.location='viewstaff.php';</script>";
 	}
 	else
 	{
@@ -28,7 +28,7 @@ if(isset($_GET['delid']))
 		<div class="row">
 			<div class="col-md-12">
 			<div class="section-title">
-			<center><h2 class="title">View Staff</h2></center>
+			<center><h2 class="title">View Admin</h2></center>
 			</div>
 			</div>
 		</div>
@@ -67,7 +67,7 @@ if(isset($_GET['delid']))
 			<td style='text-align: left;'>$rs[login_id]</td>
 			<td style='text-align: left;'>$rs[status]</td>
 			<td style='text-align: left;'>
-			
+
 			<a href='staff.php?editid=$rs[0]'  class='btn btn-primary' >Edit</a>
 
 			| <a href='viewstaff.php?delid=$rs[0]' class='btn btn-danger' onclick='return confirmdel()' >Delete</a></td>

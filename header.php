@@ -189,7 +189,7 @@ else if(isset($_SESSION['staff_id']))
 		<li><a href="staffprofile.php">Admin Profile</a></li>
 		<li><a href="staffchangepassword.php" >Change password</a></li>
 		<!--<li><a href="staff.php" >Add Staff  </a></li>
-		<li><a href="viewstaff.php" >View profile </a></li>-->
+		<li><a href="viewstaff.php" >View staff </a></li>-->
 		<li><a href="logout.php" >Logout</a></li>
 	</ul>
 </li>

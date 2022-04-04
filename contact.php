@@ -1,7 +1,7 @@
 <?php
 include("header.php");
 ?>
-
+<link rel="stylesheet" href="css/stylecontact.css">
 <div id="page-header">
 
 <div class="section-bg" style="background-image: url(img/background-2.jpg);"></div>
@@ -28,89 +28,55 @@ include("header.php");
 
 <div class="row">
 
-<main id="main" class="col-md-7">
-
-<div class="article causes-details">
-
-
-
-<div class="article-tags-share">
-
-
-<ul class="share">
-<li>SHARE:</li>
-<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-</ul>
-
-</div>
-
-
-<div class="article-reply">
+<main id="main">
 <h3>Contact us.</h3>
 <p>Leave a message...</p>
-<form>
-<div class="row">
-<div class="col-md-6">
-<div class="form-group">
-<input class="input" placeholder="Name" type="text">
-</div>
-</div>
-<div class="col-md-6">
-<div class="form-group">
-<input class="input" placeholder="Email" type="email">
-</div>
-</div>
-<div class="col-md-12">
-<div class="form-group">
-<input class="input" placeholder="Subject" type="text">
-</div>
-</div>
-<div class="col-md-12">
-<div class="form-group">
-<textarea class="input" placeholder="Message"></textarea>
-</div>
-<button class="primary-button">Submit</button>
-</div>
-</div>
-</form>
-</div>
+
+<div class="contact_container container">
+
+    <form action="" method="post">
+        <label for="fname">Full Name</label>
+        <input type="text" id="fname" name="fname" placeholder="Your name..">
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Your Email Address..">
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Subject..">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+
+        <input type="submit" name="submit" value="Submit">
+    </form>
 
 </div>
-
 </main>
 
-
-<aside id="aside" class="col-md-5">
-
-<div class="widget">
-<h3 class="widget-title">Address</h3>
-<div class="widget-category">
- Sahaya Charity,
-    Opp. konaje police station,
-    Bangalore-574199
-</div>
-</div>
+<?php
+if (isset($_POST['submit'])){
 
 
-<div class="widget">
-<h3 class="widget-title">Contact No.</h3>
-<div class="widget-category">
-0824-2287236
-</div>
-</div>
+    $fname = mysqli_real_escape_string($con,$_POST['fname']);
+    $email = mysqli_real_escape_string($con,$_POST['email']);
+    $subject = mysqli_real_escape_string($con,$_POST['subject']);
+    $message = mysqli_real_escape_string($con,$_POST['message']);
 
-<div class="widget">
-<h3 class="widget-title">Email ID.</h3>
-<div class="widget-category">
-lifeofgiving@gmail.com
-</div>
-</div>
+    $sql = "INSERT INTO contact(cname,cemail, csubject, cmessage)
+            values ('$fname', '$email', '$subject', '$message')";
 
-</aside>
+    if (mysqli_query($con, $sql))
+    {
+        echo "New record added successfully";
+    }
+    else
+    {
+        echo "Error : ". $sql . "<br>" . mysqli_error($con);
+    }
+}
+
+
+?>
 
 </div>
 

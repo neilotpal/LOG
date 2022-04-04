@@ -2,7 +2,7 @@
 session_start();
 include("header.php");
 if(isset($_POST['submit']))
-{	
+{
 	if(isset($_GET['editid']))
 	{
 		$sql ="UPDATE item_donor set donor_id='$_POST[donor_id]',address='$_POST[address]',city='$_POST[city]',pin_code='$_POST[pin_code]',item_detail='$_POST[item_detail]',quantity='$_POST[quantity]',status='$_POST[status]',datetime='$_POST[datetime]' WHERE item_donor_id='$_GET[editid]'";
@@ -14,7 +14,7 @@ if(isset($_POST['submit']))
 		else
 		{
 			echo mysqli_error($con);
-		}		
+		}
 	}
 	else
 	{
@@ -38,17 +38,29 @@ if(isset($_GET['editid']))
 	$rsedit = mysqli_fetch_array($qsqledit);
 }
 ?>
+<style>
+	<?php include 'css\styledonate.css' ?>
+</style>
 <div id="page-header">
-<div class="section-bg" style="background-image: url(img/donate_item_bg.jpg);background-size: 100% 100%;height:300px;"></div>
-
-
-
+<div class="section-bg" style="background-image: url(img/donate_item_backg.jpg);opacity: 0.9;height:400px;"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8">
+			<div class="cta-content text-center">
+				<h1 style="background-color: orange;margin-top:100px">DONATE ITEMS</h1>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+<div class="tag-line">
+	<h1 class="text-center">A Small Donation By You, Can Be a LOT To Someone!</h1>
 </div>
 
 </header>
 
 
-<div class="section" style="padding-top: 1px; margin-top:150px">
+<div class="section" style="padding-top: 1px; ">
 
 <div class="container">
 
@@ -71,7 +83,7 @@ if(isset($_GET['editid']))
 </div>
 <div class="media-body">
 	<div class="media-heading">
-	<h4>Item Donor</h4>
+	<h4>Item Donation</h4>
 	</div>
 	<p>
 <form method="post" action="" onsubmit="return validateform()">
@@ -197,7 +209,7 @@ include("footer.php");
 <script>
 function validateform()
 {
-	var i = 0;	
+	var i = 0;
 	$('.errorclass').html('');
 	if(document.getElementById("item_detail").value == "")
 	{
@@ -213,7 +225,7 @@ function validateform()
 	{
 		document.getElementById("erraddress").innerHTML = "Address should not be empty..";
 		i=1;
-	}	
+	}
 	if(document.getElementById("city").value == "")
 	{
 		document.getElementById("errcity").innerHTML = "City should not be empty..";
@@ -233,7 +245,7 @@ function validateform()
 	{
 		document.getElementById("errstatus").innerHTML = "Status should not be empty..";
 		i=1;
-	}		
+	}
 	if(i == 0)
 	{
 		return true;
