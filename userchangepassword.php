@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
 <div class="row">
 <div class="col-md-12">
 <div class="header-content">
-<h1>User Change Password</h1>
+<h1>User - Change Password</h1>
 </div>
 </div>
 </div>
