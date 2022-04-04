@@ -83,7 +83,7 @@ if(isset($_GET['editid']))
 </div>
 <div class="media-body">
 	<div class="media-heading">
-	<h4>Item Donor</h4>
+	<h4>Item Donation</h4>
 	</div>
 	<p>
 <form method="post" action="" onsubmit="return validateform()">
