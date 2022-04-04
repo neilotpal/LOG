@@ -30,7 +30,7 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		$sql ="INSERT INTO  fund_raiser(title,donor_id,fund_raiser_description,fund_amount,start_date, end_date,status,banner_img) VALUES('$_POST[title]','$_SESSION[donor_id]','$description','$_POST[fund_amount]','$curdate','$_POST[end_date]','$_POST[status]','$banner_img')";
+		$sql ="INSERT INTO  fund_raiser(title,donor_id,fund_raiser_description,fund_amount,start_date, end_date,status,banner_img) VALUES('$_POST[title]','$_SESSION[donor_id]','$description','$_POST[fund_amount]','$curdate','$_POST[end_date]','Pending','$banner_img')";
 		$qsql = mysqli_query($con,$sql);
 		if(mysqli_affected_rows($con) == 1)
 		{
@@ -163,23 +163,7 @@ else if(file_exists("imgfundraiser/".$rsedit['banner_img']))
 
 <br>
 
-<div class="row">
-	<div class="col-md-2" style="padding-top: 5px;">Status</div>
-	<div class="col-md-10">
-		<select class="form-control" name="status" id="status">
-			<option value="">Select Status</option>
-			<?php
-			$arr = array("Active","Inactive");
-			foreach($arr as $val )
-			{
-				if($val == $rsedit['status']){echo "<option value='$val' selected>$val</option>";} else {echo "<option value='$val'>$val</option>";}
-			}
 
-
-			?>
-		</select><span id="errstatus" class="errorclass"></span>
-	</div>
-</div>
 
 <br>
 
