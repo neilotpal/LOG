@@ -30,7 +30,7 @@ if(isset($_GET['delid']))
 		<div class="row">
 			<div class="col-md-12">
 			<div class="section-title">
-			<h2 class="title text-center">View Item Donor</h2>
+			<h2 class="title text-center">View Item Donations</h2>
 			</div>
 			</div>
 		</div>
@@ -92,10 +92,10 @@ echo "<a href='viewitemdonor.php?delid=$rs[0]' class='btn btn-danger' onclick='r
 		if($rs['status'] == 'Pending')
 		{
 if(isset($_SESSION['staff_id']))
-{	
+{
 echo "<a href='viewitemdonor.php?item_donor_id=$rs[0]&st=Accepted'  class='btn btn-success' onclick='return confirmst()' >Accept</a><br>";
 echo "<a href='viewitemdonor.php?item_donor_id=$rs[0]&st=Rejected'  class='btn btn-warning' onclick='return confirmst()' >Reject</a>";
-}	
+}
 		}
 		echo "</td></tr>";
 	}

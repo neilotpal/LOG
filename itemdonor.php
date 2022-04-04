@@ -54,7 +54,7 @@ if(isset($_GET['editid']))
 	</div>
 </div>
 <div class="tag-line">
-	<h1 class="text-center">Little By Little, A Little Becomes A LOT!</h1>
+	<h1 class="text-center">A Small Donation By You, Can Be a LOT To Someone!</h1>
 </div>
 
 </header>
