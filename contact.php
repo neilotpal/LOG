@@ -35,11 +35,8 @@ include("header.php");
 <div class="contact_container container">
 
     <form action="" method="post">
-        <label for="fname">First Name</label>
+        <label for="fname">Full Name</label>
         <input type="text" id="fname" name="fname" placeholder="Your name..">
-
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lname" placeholder="Your last name..">
 
         <label for="email">Email</label>
         <input type="text" id="email" name="email" placeholder="Your Email Address..">
@@ -55,6 +52,31 @@ include("header.php");
 
 </div>
 </main>
+
+<?php
+if (isset($_POST['submit'])){
+
+
+    $fname = mysqli_real_escape_string($con,$_POST['fname']);
+    $email = mysqli_real_escape_string($con,$_POST['email']);
+    $subject = mysqli_real_escape_string($con,$_POST['subject']);
+    $message = mysqli_real_escape_string($con,$_POST['message']);
+
+    $sql = "INSERT INTO contact(cname,cemail, csubject, cmessage)
+            values ('$fname', '$email', '$subject', '$message')";
+
+    if (mysqli_query($con, $sql))
+    {
+        echo "New record added successfully";
+    }
+    else
+    {
+        echo "Error : ". $sql . "<br>" . mysqli_error($con);
+    }
+}
+
+
+?>
 
 </div>
 
