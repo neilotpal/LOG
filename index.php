@@ -39,7 +39,7 @@ include("header.php");
 	</div>
 
 	<div class="home-item">
-		<div class="section-bg" style="background-image: url(img/donate_item_bg.jpg); background-size:100% 100%""></div>
+		<div class="section-bg" style="background-image: url(img/donate_item_carousel2.jpg); background-size:100% 100%""></div>
 		<div class="home">
 			<div class="container">
 				<div class="row">
