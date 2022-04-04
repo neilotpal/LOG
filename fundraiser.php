@@ -7,7 +7,7 @@
 	<?php include 'css\styledonate.css' ?>
 </style>
 <div id="cta" class="section">
-	<div class="section-bg w-100" style="background-image: url(img/charity/donatebg.jpg); opacity:0.8; height: 400px;"></div>
+	<div class="section-bg" style="background-image: url(img/charity/donatebg.jpg);margin-top: 60px;opacity:0.9; height: 400px;"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-offset-2 col-md-8">
