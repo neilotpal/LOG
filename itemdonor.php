@@ -148,7 +148,7 @@ if(isset($_GET['editid']))
 
 <br>
 <?php
-if(isset($_SESSION['staff_id']))
+/*if(isset($_SESSION['staff_id']))
 {
 ?>
 <div class="row">
@@ -175,7 +175,7 @@ else
 <input type='hidden' name="status" id="status" value="Pending" >
 	<span id="errstatus" class="errorclass"></span>
 <?php
-}
+}*/
 ?>
 <br>
 
@@ -239,11 +239,6 @@ function validateform()
 	if(document.getElementById("datetime").value == "")
 	{
 		document.getElementById("errdatetime").innerHTML = "Date time should not be empty..";
-		i=1;
-	}
-	if(document.getElementById("status").value == "")
-	{
-		document.getElementById("errstatus").innerHTML = "Status should not be empty..";
 		i=1;
 	}
 	if(i == 0)

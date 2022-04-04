@@ -54,6 +54,7 @@ if(isset($_GET['editid']))
 }
 ?>
 
+
 <div id="page-header">
 
 <div class="section-bg" style="background-image: url(img/background-2.jpg);"></div>

@@ -9,6 +9,22 @@ if(!isset($_SESSION['donor_id']))
 }
 
 ?>
+<?php
+//item_donor_id st
+
+
+if(isset($_GET['delid']))
+{
+	$sql = "DELETE FROM fund_raiser WHERE fund_raiser_id='$_GET[delid]'";
+	$qsql = mysqli_query($con,$sql);
+		echo mysqli_error($con);
+	if(mysqli_affected_rows($con) == 1)
+	{
+		echo "<script>alert('Fundraiser record deleted successfully..');</script>";
+		echo "<script>window.location='viewfundmain.php';</script>";
+	}
+}
+?>
 </header>
 <div id="about" class="section">
 	<div class="container">
@@ -78,13 +94,23 @@ else
 			<td style='text-align: right;'>₹$rs[fund_amount]</td>
 			<td>" . date("d-M-Y",strtotime($rs['start_date'])) . " </td>
 			<td>" . date("d-M-Y",strtotime($rs['end_date'])) . " </td>
-			<td>$rs[status]</td>
-      <td>
-			<a href='viewdonorsmain.php?fund_raiser_id=$rs[0]'  class='btn btn-primary' >View Donors</a>
-			</td>
+			<td><b>$rs[status]</b>";
+			echo "</td>
+			<td>";
+		if($rs['status'] == 'Pending')
+		{
+echo "<a href='viewfundmain.php?delid=$rs[0]' class='btn btn-danger' onclick='return confirmdel()' >Delete</a><br>";
+		}
+		if($rs['status'] == 'Active')
+		{
+echo "<a href='viewdonorsmain.php?fund_raiser_id=$rs[0]'  class='btn btn-primary' >View Donors</a>";
+		}
+		echo "</td></tr>";
+	}?>
+
 			</tr>";
-	}
-?>
+
+
 	</tbody>
 </table>
 
