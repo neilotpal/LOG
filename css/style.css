@@ -627,7 +627,8 @@ textarea.input {
 }
 
 .causes {
-  margin-bottom: 60px
+  margin-bottom: 60px;
+  padding: 5px 5px;
 }
 
 .causes .causes-img {
@@ -707,34 +708,38 @@ textarea.input {
 }
 
 .causes-progress .causes-goal {
-  float: right
+  float: right;
 }
 
 .causes .causes-content {
-  margin-top: 15px
+  margin-top: 15px;
 }
 
 .causes .causes-content h3 {
-  text-transform: capitalize
+  text-transform: capitalize;
+  justify-content:center;
 }
 
 .causes .causes-content h3>a {
-  font-weight: 700
+  font-weight: 700;
 }
 
 .causes .causes-content .causes-donate {
-  margin-top: 15px
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  background-color:#0186ff;
 }
 
 .causes-details .causes-progress {
   width: 75%;
   float: left;
-  margin-top: 45px
+  margin-top: 45px;
 }
 
 .causes-details .causes-donate {
   float: right;
-  margin-top: 30px
+  margin-top: 30px;
 }
 
 .event {

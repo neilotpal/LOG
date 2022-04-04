@@ -72,7 +72,7 @@
 						<div class="causes-content">
 							<h3><a href="funraiserdetailed.php?fund_raiser_id=<?php echo $rs[0]; ?>"><?php echo  $rs['title']; ?></a></h3>
 							<p><?php echo  $string = substr($rs['fund_raiser_description'],0,100).'...'; ?></p>
-							<a href="funraiserdetailed.php?fund_raiser_id=<?php echo $rs[0]; ?>" class="primary-button causes-donate" style="background-color:#0186ff;">Donate Now</a>
+							<a href="funraiserdetailed.php?fund_raiser_id=<?php echo $rs[0]; ?>" class="primary-button causes-donate">Donate Now</a>
 						</div>
 
 					</div>
