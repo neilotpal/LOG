@@ -189,11 +189,10 @@ else if(isset($_SESSION['staff_id']))
 ?>
 <li><a href="dashboard.php">Dashboard</a></li>
 
-<li class="has-dropdown"><a href="#">Fund Raiser</a>
+<li class="has-dropdown"><a href="#">Fundraiser</a>
 	<ul class="dropdown">
-		<li><a href="fund.php" >Add Fund Raiser</a></li>
 		<li><a href="viewfundcollection.php" >View fund collection</a></li>
-		<li><a href="viewfund.php" >View fund Raiser</a></li>
+		<li><a href="viewfund.php" >View fundraiser</a></li>
 	</ul>
 </li>
 
