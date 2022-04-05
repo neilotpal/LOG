@@ -14,7 +14,7 @@ if(isset($_POST['btndonorregister']))
 		echo mysqli_error($con);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('User Registration done successfully..');</script>";
+		echo "<script>alert('User Registration done successfully');</script>";
 		echo "<script>window.location='index.php';</script>";
 	}
 }
@@ -43,7 +43,7 @@ if(isset($_POST['btndonorlogin']))
 	}
 	else
 	{
-		echo "<script>alert('You have entered Invalid Login credentials..');</script>";
+		echo "<script>alert('You have entered Invalid Login Credentials');</script>";
 	}
 }
 if(isset($_POST['btnstafflogin']))
