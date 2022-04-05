@@ -8,7 +8,7 @@ if(isset($_GET['delid']))
 	if(mysqli_affected_rows($con) == 1)
 	{
 	echo "<script>alert('Staff record deleted successfully..');</script>";
-	echo "<script>window.location='viewstaff.php';</script>";	
+	echo "<script>window.location='viewstaff.php';</script>";
 	}
 }
 if(isset($_GET['fund_collection_id']))
@@ -20,7 +20,7 @@ if(isset($_GET['fund_collection_id']))
 	$qsqldonor =mysqli_query($con,$sqldonor);
 	echo mysqli_error($con);
 	$rsdonor = mysqli_fetch_array($qsqldonor);
-	
+
 	$sqlfund_raiser  ="SELECT * FROM fund_raiser WHERE fund_raiser_id='$rsfund_collection[fund_raiser_id]'";
 	$qsqlfund_raiser =mysqli_query($con,$sqlfund_raiser);
 	echo mysqli_error($con);
@@ -53,7 +53,7 @@ if(isset($_GET['fund_collection_id']))
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
-			<th colspan="2"><center><img src="img/logo.png"></center></th>
+			<th colspan="2"><center><img src="img/loglogo.png" style="height:100px"></center></th>
 		</tr>
 		<tr>
 			<th colspan="2"><center><h4>FUND COLLECTION RECEIPT</h4></center></th>
