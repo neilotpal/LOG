@@ -48,12 +48,12 @@ if(isset($_POST['btndonorlogin']))
 }
 if(isset($_POST['btnstafflogin']))
 {
-<<<<<<< HEAD
+
 	$password=$_POST["staffpassword"];
 	$sql  ="SELECT * FROM staff WHERE login_id='$_POST[staffloginid]'";
-=======
+
 	$sql  ="SELECT * FROM staff WHERE login_id='$_POST[staffloginid]' AND password='$_POST[staffpassword]'";
->>>>>>> 13dcf6dbb2f2c39cb34c1a24b5451ac3469963bd
+
 	$qsql =mysqli_query($con,$sql);
 	if(mysqli_num_rows($qsql) >0)
 	{
