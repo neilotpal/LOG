@@ -6,7 +6,9 @@ include("header.php");
 if(isset($_POST['submit']))
 {
 	//opassword password
-	$sql ="UPDATE donor SET password='$_POST[password]' where donor_id='$_SESSION[donor_id]' AND password='$_POST[opassword]'";
+	$password=$_POST["password"];
+	$password=password_hash($password,PASSWORD_BCRYPT);
+	$sql ="UPDATE donor SET password='{$password}' where donor_id='$_SESSION[donor_id]'";
 	$qsql = mysqli_query($con,$sql);
 		echo mysqli_error($con);
 	if(mysqli_affected_rows($con) == 1)

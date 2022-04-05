@@ -5,21 +5,7 @@ session_start();
 include("header.php");
 if(isset($_POST['submit']))
 {
-	/*if(isset($_GET['editid']))
-	{
-		$sql ="UPDATE staff set staff_name='$_POST[staff_name]',login_id='$_POST[login_id]',password='$_POST[password]' WHERE staff_id='$_GET[editid]'";
-		$qsql = mysqli_query($con,$sql);
-		if(mysqli_affected_rows($con) == 1)
-		{
-			echo "<script>alert('staff record updated successfully..');</script>";
-		}
-		else
-		{
-			echo mysqli_error($con);
-		}
-	}
-	else
-	{*/
+
 		$password=$_POST["password"];
 		$password=password_hash($password,PASSWORD_BCRYPT);
 	$sql ="INSERT INTO staff(staff_name,login_id,password) VALUES('$_POST[staff_name] ','$_POST[login_id]','$password')";
