@@ -5,11 +5,11 @@ session_start();
 include("header.php");
 if(isset($_POST['submit']))
 {
-		$sql ="UPDATE staff set staff_type='$_POST[staff_type]',staff_name='$_POST[staff_name]',login_id='$_POST[login_id]'  WHERE staff_id='$_SESSION[staff_id]'";
+		$sql ="UPDATE staff set staff_name='$_POST[staff_name]',login_id='$_POST[login_id]'  WHERE staff_id='$_SESSION[staff_id]'";
 		$qsql = mysqli_query($con,$sql);
 		if(mysqli_affected_rows($con) == 1)
 		{
-			echo "<script>alert('Staff record updated successfully..');</script>";
+			echo "<script>alert('updated successfully..');</script>";
 		}
 		else
 		{
@@ -28,10 +28,7 @@ if(isset($_SESSION['staff_id']))
 
 
 <div id="page-header">
-
 <div class="section-bg" style="background-image: url(img/background-2.jpg);"></div>
-
-
 <div class="container">
 <div class="row">
 <div class="col-md-12">
@@ -69,15 +66,6 @@ if(isset($_SESSION['staff_id']))
 	</div>
 	<p>
 <form method="post" action="" onsubmit="return validateform()">
-<div class="row">
-	<div class="col-md-2" style="padding-top: 5px;">Type </div>
-	<div class="col-md-10">
-		<input type="text" name="staff_type" id="staff_type" class="form-control" value="<?php	echo $rsedit['staff_type'];	?>" readonly>
-		<span id="errstaff_type" class="errorclass"></span>
-	</div>
-</div>
-
-<br>
 
 <div class="row">
 	<div class="col-md-2" style="padding-top: 5px;"> Name </div>
@@ -131,11 +119,7 @@ function validateform()
 {
 	var i = 0;
 	$('.errorclass').html('');
-	if(document.getElementById("staff_type").value == "")
-	{
-		document.getElementById("errstaff_type").innerHTML = "Kindly select Admin Type..";
-		i=1;
-	}
+
 	if(document.getElementById("staff_name").value == "")
 	{
 		document.getElementById("errstaff_name").innerHTML = "Admin Name should not be empty..";
