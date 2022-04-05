@@ -9,12 +9,12 @@ if(isset($_POST['btndonorregister']))
 {
 	$password=$_POST["donornpassword"];
 	$password=password_hash($password,PASSWORD_BCRYPT);
-	$sql ="INSERT INTO donor(name,email_id,password,contact_no,status) VALUES ('$_POST[name]','$_POST[donoremailid]','$password','$_POST[contactno]','Active')";
+	$sql ="INSERT INTO donor(name,email_id,password,contact_no) VALUES ('$_POST[name]','$_POST[donoremailid]','$password','$_POST[contactno]')";
 	$qsql = mysqli_query($con,$sql);
 		echo mysqli_error($con);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('User Registration done successfully..');</script>";
+		echo "<script>alert('User Registration done successfully');</script>";
 		echo "<script>window.location='index.php';</script>";
 	}
 }
@@ -43,13 +43,17 @@ if(isset($_POST['btndonorlogin']))
 	}
 	else
 	{
-		echo "<script>alert('You have entered Invalid Login credentials..');</script>";
+		echo "<script>alert('You have entered Invalid Login Credentials');</script>";
 	}
 }
 if(isset($_POST['btnstafflogin']))
 {
+<<<<<<< HEAD
 	$password=$_POST["staffpassword"];
 	$sql  ="SELECT * FROM staff WHERE login_id='$_POST[staffloginid]'";
+=======
+	$sql  ="SELECT * FROM staff WHERE login_id='$_POST[staffloginid]' AND password='$_POST[staffpassword]'";
+>>>>>>> 13dcf6dbb2f2c39cb34c1a24b5451ac3469963bd
 	$qsql =mysqli_query($con,$sql);
 	if(mysqli_num_rows($qsql) >0)
 	{
