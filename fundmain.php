@@ -21,7 +21,7 @@ if(isset($_POST['submit']))
 		$qsql = mysqli_query($con,$sql);
 		if(mysqli_affected_rows($con) == 1)
 		{
-			echo "<script>alert('Fund Raiser Request updated successfully..');</script>";
+			echo "<script>alert('Fund Raiser Request updated successfully');</script>";
 		}
 		else
 		{
@@ -30,7 +30,7 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		$sql ="INSERT INTO  fund_raiser(title,donor_id,fund_raiser_description,fund_amount,start_date, end_date,status,banner_img) VALUES('$_POST[title]','$_SESSION[donor_id]','$description','$_POST[fund_amount]','$curdate','$_POST[end_date]','Pending','$banner_img')";
+		$sql ="INSERT INTO  fund_raiser(title,donor_id,fund_raiser_description,fund_amount,start_date,end_date,account_no,ifsc_code,branch_name,status,banner_img) VALUES('$_POST[title]','$_SESSION[donor_id]','$description','$_POST[fund_amount]','$curdate','$_POST[end_date]','$_POST[account_no]','$_POST[ifsc_code]','$_POST[branch_name]','Pending','$banner_img')";
 		$qsql = mysqli_query($con,$sql);
 		if(mysqli_affected_rows($con) == 1)
 		{
@@ -164,6 +164,36 @@ else if(file_exists("imgfundraiser/".$rsedit['banner_img']))
 
 <br>
 
+<div class="row">
+	<div class="col-md-2" style="padding-top: 5px;">Account Number </div>
+	<div class="col-md-10">
+		<input type="text" name="account_no"  id="account_no" class="form-control" value="<?php echo $rsedit['account_no']; ?>">
+		<span id="erraccount_no" class="errorclass"></span>
+	</div>
+</div>
+
+<br>
+
+<div class="row">
+	<div class="col-md-2" style="padding-top: 5px;">IFSC Code </div>
+	<div class="col-md-10">
+		<input type="text" name="ifsc_code"  id="ifsc_code" class="form-control" value="<?php echo $rsedit['ifsc_code']; ?>">
+		<span id="errifsc_code" class="errorclass"></span>
+	</div>
+</div>
+
+<br>
+
+<div class="row">
+	<div class="col-md-2" style="padding-top: 5px;">Branch Name </div>
+	<div class="col-md-10">
+		<input type="text" name="branch_name"  id="branch_name" class="form-control" value="<?php echo $rsedit['branch_name']; ?>">
+		<span id="errbranch_name" class="errorclass"></span>
+	</div>
+</div>
+
+<br>
+
 
 
 <br>
@@ -248,11 +278,6 @@ function validateform()
 	var alphaSpaceNumericExp = /^[0-9a-zA-Z\s]+$/;
 	var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
 
-	if(!document.getElementById("title").value.match(alphaSpaceNumericExp))
-	{
-		document.getElementById("errtitle").innerHTML = "Entered title not valid...";
-		i = 1;
-	}
 	if(document.getElementById("title").value=="")
 	{
 		document.getElementById("errtitle").innerHTML = "Kindly enter title...";
@@ -268,11 +293,7 @@ function validateform()
 		document.getElementById("errfund_raiser_description").innerHTML = "Kindly enter fund raiser description...";
 		i = 1;
 	}
-	if(document.getElementById("start_date").value=="")
-	{
-		document.getElementById("errstart_date").innerHTML = "Kindly enter the Start date...";
-		i = 1;
-	}
+
 	if(document.getElementById("end_date").value=="")
 	{
 		document.getElementById("errend_date").innerHTML = "Kindly enter End date...";
@@ -284,16 +305,19 @@ function validateform()
 		document.getElementById("errfund_amount").innerHTML = "Entered Fund Amount is not valid...";
 		i = 1;
 	}
-	if(document.getElementById("fund_amount").value=="")
+	if(document.getElementById("account_no").value=="")
 	{
-		document.getElementById("errfund_amount").innerHTML = "Kindly enter the Fund amount...";
+		document.getElementById("erraccount_no").innerHTML = "Kindly enter your Account Number";
 		i = 1;
 	}
-
-
-	if(document.getElementById("status").value=="")
+	if(document.getElementById("ifsc_code").value=="")
 	{
-		document.getElementById("errstatus").innerHTML = "kindly select status...";
+		document.getElementById("errifsc_code").innerHTML = "Kindly enter IFSC Code";
+		i = 1;
+	}
+	if(document.getElementById("branch_name").value=="")
+	{
+		document.getElementById("errbranch_name").innerHTML = "Kindly enter Branch Name";
 		i = 1;
 	}
 
