@@ -48,13 +48,25 @@ if(isset($_POST['btndonorlogin']))
 }
 if(isset($_POST['btnstafflogin']))
 {
-	$sql  ="SELECT * FROM staff WHERE login_id='$_POST[staffloginid]' AND password='$_POST[staffpassword]' AND status='Active'";
+	$password=$_POST["staffpassword"];
+	$sql  ="SELECT * FROM staff WHERE login_id='$_POST[staffloginid]'";
 	$qsql =mysqli_query($con,$sql);
-	if(mysqli_num_rows($qsql)  == 1)
+	if(mysqli_num_rows($qsql) >0)
 	{
-		$rs = mysqli_fetch_array($qsql);
-		$_SESSION['staff_id'] = $rs['staff_id'];
-		echo "<script>window.location='dashboard.php';</script>";
+		 while($row=mysqli_fetch_array($qsql))
+			 {
+			    if(password_verify($password,$row["password"]))
+					{
+						$_SESSION['staff_id'] = $row['staff_id'];
+						echo "<script>window.location='dashboard.php';</script>";
+					}
+					else
+					{
+						echo '<script>alert("wrong user details")</script>';
+					}
+
+			 }
+
 	}
 	else
 	{
@@ -199,6 +211,7 @@ else if(isset($_SESSION['staff_id']))
 	<ul class="dropdown">
 		<li><a href="staffprofile.php">Admin Profile</a></li>
 		<li><a href="staffchangepassword.php" >Change password</a></li>
+		<li><a href="staff.php">Add Admin</a></li>
 		<li><a href="logout.php" >Logout</a></li>
 	</ul>
 </li>
