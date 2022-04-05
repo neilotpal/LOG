@@ -8,10 +8,11 @@ if(isset($_POST['submit']))
 {
 	$description = mysqli_real_escape_string($con,$_POST['fund_raiser_description']);
 	$banner_img = rand() . $_FILES["banner_img"]["name"];
+	$curdate=date("Y-m-d");
 	move_uploaded_file($_FILES["banner_img"]["tmp_name"],"imgfundraiser/".$banner_img);
 	if(isset($_GET['editid']))
 	{
-		 $sql ="UPDATE fund_raiser SET title='$_POST[title]',fund_raiser_description='$description',fund_amount='$_POST[fund_amount]',start_date='$_POST[start_date]', end_date='$_POST[end_date]',status='$_POST[status]'";
+		 $sql ="UPDATE fund_raiser SET title='$_POST[title]',fund_raiser_description='$description',fund_amount='$_POST[fund_amount]',start_date='$curdate', end_date='$_POST[end_date]',status='$_POST[status]'";
 		 if($_FILES["banner_img"]["name"] != "")
 		 {
 			 $sql = $sql . " , banner_img='$banner_img' ";
@@ -29,7 +30,7 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		$sql ="INSERT INTO  fund_raiser(title,donor_id,fund_raiser_description,fund_amount,start_date, end_date,status,banner_img) VALUES('$_POST[title]','$_SESSION[donor_id]','$description','$_POST[fund_amount]','$_POST[start_date]','$_POST[end_date]','$_POST[status]','$banner_img')";
+		$sql ="INSERT INTO  fund_raiser(title,donor_id,fund_raiser_description,fund_amount,start_date, end_date,status,banner_img) VALUES('$_POST[title]','$_SESSION[donor_id]','$description','$_POST[fund_amount]','$curdate','$_POST[end_date]','Pending','$banner_img')";
 		$qsql = mysqli_query($con,$sql);
 		if(mysqli_affected_rows($con) == 1)
 		{
@@ -52,6 +53,7 @@ if(isset($_GET['editid']))
 	$rsedit = mysqli_fetch_array($qsqledit);
 }
 ?>
+
 
 <div id="page-header">
 
@@ -141,13 +143,6 @@ else if(file_exists("imgfundraiser/".$rsedit['banner_img']))
 
 <br>
 
-<div class="row">
-	<div class="col-md-2" style="padding-top: 5px;">Start Date </div>
-	<div class="col-md-10">
-		<input type="date" name="start_date"  id="start_date" class="form-control" value="<?php echo $rsedit['start_date']; ?>" min="<?php echo date("Y-m-d"); ?>">
-		<span id="errstart_date" class="errorclass"></span>
-	</div>
-</div>
 
 <br>
 <div class="row">
@@ -169,23 +164,7 @@ else if(file_exists("imgfundraiser/".$rsedit['banner_img']))
 
 <br>
 
-<div class="row">
-	<div class="col-md-2" style="padding-top: 5px;">Status</div>
-	<div class="col-md-10">
-		<select class="form-control" name="status" id="status">
-			<option value="">Select Status</option>
-			<?php
-			$arr = array("Active","Inactive");
-			foreach($arr as $val )
-			{
-				if($val == $rsedit['status']){echo "<option value='$val' selected>$val</option>";} else {echo "<option value='$val'>$val</option>";}
-			}
 
-
-			?>
-		</select><span id="errstatus" class="errorclass"></span>
-	</div>
-</div>
 
 <br>
 
