@@ -6,7 +6,9 @@ include("header.php");
 if(isset($_POST['submit']))
 {
 	//opassword password
-	$sql ="UPDATE staff SET password='$_POST[password]' where staff_id='$_SESSION[staff_id]' AND password='$_POST[opassword]'";
+	$password=$_POST["password"];
+	$password=password_hash($password,PASSWORD_BCRYPT);
+	$sql ="UPDATE staff SET password='$password' where staff_id='$_SESSION[staff_id]'";
 	$qsql = mysqli_query($con,$sql);
 		echo mysqli_error($con);
 	if(mysqli_affected_rows($con) == 1)
@@ -123,9 +125,9 @@ include("footer.php");
 <script>
 function validateform()
 {
-	var i = 0;	
+	var i = 0;
 	$('.errorclass').html('');
-	
+
 	if(document.getElementById("opassword").value=="")
 	{
 		document.getElementById("erropassword").innerHTML = "Kindly enter the password ...";
@@ -136,7 +138,7 @@ function validateform()
 		document.getElementById("errpassword").innerHTML = "Kindly enter the password ...";
 		i = 1;
 	}
-		
+
 	if(document.getElementById("confirmpassword").value=="")
 	{
 		document.getElementById("errconfirmpassword").innerHTML = "Kindly enter confirm password....";

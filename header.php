@@ -48,13 +48,25 @@ if(isset($_POST['btndonorlogin']))
 }
 if(isset($_POST['btnstafflogin']))
 {
-	$sql  ="SELECT * FROM staff WHERE login_id='$_POST[staffloginid]' AND password='$_POST[staffpassword]'";
+	$password=$_POST["staffpassword"];
+	$sql  ="SELECT * FROM staff WHERE login_id='$_POST[staffloginid]'";
 	$qsql =mysqli_query($con,$sql);
-	if(mysqli_num_rows($qsql)  == 1)
+	if(mysqli_num_rows($qsql)  > 0)
 	{
-		$rs = mysqli_fetch_array($qsql);
-		$_SESSION['staff_id'] = $rs['staff_id'];
-		echo "<script>window.location='dashboard.php';</script>";
+		//$rs = mysqli_fetch_array($qsql);
+		while($row=mysqli_fetch_array($qsql))
+		{
+			 if(password_verify($password,$row["password"]))
+			 {
+				 $_SESSION['staff_id'] = $row['staff_id'];
+		 		echo "<script>window.location='dashboard.php';</script>";
+			}
+			 else
+			 {
+				 echo '<script>alert("wrong user details")</script>';
+			 }
+
+		}
 	}
 	else
 	{
