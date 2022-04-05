@@ -61,7 +61,7 @@ if(isset($_GET['delid']))
 	</thead>
 	<tbody>
 			<?php
-	$sql = "SELECT item_donor.*, donor.name, donor.email_id, donor.contact_no, staff.staff_name,staff.login_id FROM item_donor LEFT JOIN donor ON donor.donor_id=item_donor.donor_id LEFT JOIN staff oN staff.staff_id=item_donor.staff_id WHERE item_donor.status != 'Deleted' ";
+	$sql = "SELECT item_donor.*, donor.name, donor.email_id, donor.contact_no FROM item_donor LEFT JOIN donor ON donor.donor_id=item_donor.donor_id WHERE item_donor.status != 'Deleted' ";
 	if(isset($_SESSION['donor_id']))
 	{
 		$sql = $sql . " AND item_donor.donor_id='$_SESSION[donor_id]' ";
