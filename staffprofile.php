@@ -36,7 +36,7 @@ if(isset($_SESSION['staff_id']))
 <div class="row">
 <div class="col-md-12">
 <div class="header-content">
-<h2>Staff Profile</h2>
+<h2>Admin Profile</h2>
 </div>
 </div>
 </div>
@@ -56,12 +56,7 @@ if(isset($_SESSION['staff_id']))
 <main id="" class="col-md-12">
 
 <div class="">
-
-
-
 <div class="">
-
-
 <div class="article-comments">
 
 <div class="media">
@@ -70,12 +65,12 @@ if(isset($_SESSION['staff_id']))
 </div>
 <div class="media-body">
 	<div class="media-heading">
-	<h4>Staff Profile</h4>
+	<h4>Admin Profile</h4>
 	</div>
 	<p>
 <form method="post" action="" onsubmit="return validateform()">
 <div class="row">
-	<div class="col-md-2" style="padding-top: 5px;">Staff Type </div>
+	<div class="col-md-2" style="padding-top: 5px;">Type </div>
 	<div class="col-md-10">
 		<input type="text" name="staff_type" id="staff_type" class="form-control" value="<?php	echo $rsedit['staff_type'];	?>" readonly>
 		<span id="errstaff_type" class="errorclass"></span>
@@ -85,7 +80,7 @@ if(isset($_SESSION['staff_id']))
 <br>
 
 <div class="row">
-	<div class="col-md-2" style="padding-top: 5px;">Staff Name </div>
+	<div class="col-md-2" style="padding-top: 5px;"> Name </div>
 	<div class="col-md-10">
 		<input type="text" name="staff_name" id="staff_name" class="form-control" value="<?php echo $rsedit['staff_name']; ?>">
 	<span id="errstaff_name" class="errorclass"></span>
@@ -134,23 +129,23 @@ include("footer.php");
 <script>
 function validateform()
 {
-	var i = 0;	
+	var i = 0;
 	$('.errorclass').html('');
 	if(document.getElementById("staff_type").value == "")
 	{
-		document.getElementById("errstaff_type").innerHTML = "Kindly select Staff Type..";
+		document.getElementById("errstaff_type").innerHTML = "Kindly select Admin Type..";
 		i=1;
 	}
 	if(document.getElementById("staff_name").value == "")
 	{
-		document.getElementById("errstaff_name").innerHTML = "Staff Name should not be empty..";
+		document.getElementById("errstaff_name").innerHTML = "Admin Name should not be empty..";
 		i=1;
 	}
 	if(document.getElementById("login_id").value == "")
 	{
 		document.getElementById("errlogin_id").innerHTML = "Login ID should not be empty..";
 		i=1;
-	}		
+	}
 	if(i == 0)
 	{
 		return true;
