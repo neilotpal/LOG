@@ -7,6 +7,16 @@ if(!isset($_SESSION['staff_id']))
 {
 	echo "<script>window.location='index.php';</script>";
 }
+if(isset($_GET['st']))
+{
+	$sqlupd = "UPDATE fund_raiser SET status='$_GET[st]' WHERE  fund_raiser_id='$_GET[fund_raiser_id]'";
+	$qsqlupd = mysqli_query($con,$sqlupd);
+	if(mysqli_affected_rows($con) == 1)
+	{
+		echo "<script>alert('Fundraiser request $_GET[st] ..');</script>";
+		echo "<script>window.location='viewfund.php';</script>";
+	}
+}
 if(isset($_GET['delid']))
 {
 	$sql = "DELETE FROM fund_raiser WHERE fund_raiser_id='$_GET[delid]'";
@@ -83,15 +93,22 @@ else
 			<td style='text-align: right;'>₹$rs[fund_amount]</td>
 			<td>" . date("d-M-Y",strtotime($rs['start_date'])) . " </td>
 			<td>" . date("d-M-Y",strtotime($rs['end_date'])) . " </td>
-			<td>$rs[status]</td>
-			<td>
-			<a href='fund.php?editid=$rs[0]'  class='btn btn-primary' >Edit</a>
+			<td><b>$rs[status]</b>";
+echo "</td>
+<td>";
+echo "<a href='fund.php?editid=$rs[0]'  class='btn btn-primary' style='margin-right:10px' >Edit</a>";
 
-			<a href='viewfund.php?delid=$rs[0]' class='btn btn-danger' onclick='return confirmdel()' >Delete</a>
-			</td>
+echo "<a href='viewfund.php?delid=$rs[0]' class='btn btn-danger' onclick='return confirmdel()' >Delete</a><br><br>";
 
-			</tr>";
-	}
+if($rs['status'] == 'Pending')
+{
+
+echo "<a href='viewfund.php?fund_raiser_id=$rs[0]&st=Accepted'  class='btn btn-success' style='margin-right:10px' onclick='return confirmst()' >Accept</a>";
+echo "<a href='viewfund.php?fund_raiser_id=$rs[0]&st=Rejected'  class='btn btn-warning' onclick='return confirmst()' >Reject</a>";
+
+}
+echo "</td></tr>";
+}
 ?>
 	</tbody>
 </table>
@@ -112,6 +129,17 @@ include("footer.php");
 function confirmdel()
 {
 	if(confirm("Are you sure want to delete this record?") == true)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+function confirmst()
+{
+	if(confirm("Are you sure?") == true)
 	{
 		return true;
 	}
