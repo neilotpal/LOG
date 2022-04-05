@@ -1,4 +1,5 @@
 <?php
+//include('databaseconnection.php');
 if(!isset($_SESSION)) { session_start(); }
 error_reporting(E_ALL & ~E_NOTICE  &  ~E_STRICT  &  ~E_WARNING);
 $dt = date("Y-m-d");
@@ -6,7 +7,9 @@ $rupeesymbol= "₹";
 include("databaseconnection.php");
 if(isset($_POST['btndonorregister']))
 {
-	$sql ="INSERT INTO donor(name,email_id,password,contact_no,status) VALUES ('$_POST[name]','$_POST[donoremailid]','$_POST[donornpassword]','$_POST[contactno]','Active')";
+	$password=$_POST["donornpassword"];
+	$password=password_hash($password,PASSWORD_BCRYPT);
+	$sql ="INSERT INTO donor(name,email_id,password,contact_no,status) VALUES ('$_POST[name]','$_POST[donoremailid]','$password','$_POST[contactno]','Active')";
 	$qsql = mysqli_query($con,$sql);
 		echo mysqli_error($con);
 	if(mysqli_affected_rows($con) == 1)
@@ -17,13 +20,26 @@ if(isset($_POST['btndonorregister']))
 }
 if(isset($_POST['btndonorlogin']))
 {
-	$sql  ="SELECT * FROM donor WHERE email_id='$_POST[donoremail_id]' AND password='$_POST[donorpassword]' AND status='Active'";
+	$password=$_POST["donorpassword"];
+	$sql  ="SELECT * FROM donor WHERE email_id='$_POST[donoremail_id]'";
 	$qsql =mysqli_query($con,$sql);
-	if(mysqli_num_rows($qsql)  == 1)
+
+	if(mysqli_num_rows($qsql) > 0)
 	{
-		$rs = mysqli_fetch_array($qsql);
-		$_SESSION['donor_id'] = $rs['donor_id'];
-		echo "<script>window.location='index.php';</script>";
+	   while($row=mysqli_fetch_array($qsql))
+		 {
+		    if(password_verify($password,$row["password"]))
+				{
+					$_SESSION['donor_id'] = $row['donor_id'];
+					echo "<script>window.location='index.php';</script>";
+				}
+				else
+				{
+					echo '<script>alert("wrong user details")</script>';
+				}
+
+		 }
+
 	}
 	else
 	{
@@ -118,14 +134,9 @@ else
 <button class="navbar-toggle-btn">
 <i class="fa fa-bars"></i>
 </button>
-
-
-
-
 </div>
 
 <ul class="navbar-menu nav navbar-nav navbar-right">
-
 <?php
 if(isset($_SESSION['donor_id']))
 {

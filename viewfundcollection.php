@@ -66,7 +66,8 @@ if(isset($_GET['delid']))
 		echo "<b>Starts -</b> " . date("d-M-Y",strtotime($rs['start_date'])) . "<br>";
 		echo "<b>Ends -</b> " . date("d-M-Y",strtotime($rs['end_date'])) . "<br>";
 
-		echo "</td>	<td style='text-align: left;'>";
+		echo "</td>
+		<td style='text-align: left;'>";
 
 		echo "<b>". $rs['name'] . "</b><br>";
 		echo $rs['address'] . ",<br>". $rs['city'] . "-". $rs['pin_code'] . "<br><b>Ph No.</b>". $rs['contact_no'] . "<br>";
