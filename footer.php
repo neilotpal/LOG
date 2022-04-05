@@ -76,8 +76,7 @@ Confirm password: <input type="password" name="donorcpassword" id="donorcpasswor
 <span id="errdonorcpassword" class="errorclass"></span>
 </div>
 <br>
-
-			</div>
+</div>
 
 
 			<div class="modal-footer">
