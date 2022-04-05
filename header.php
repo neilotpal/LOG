@@ -9,7 +9,7 @@ if(isset($_POST['btndonorregister']))
 {
 	$password=$_POST["donornpassword"];
 	$password=password_hash($password,PASSWORD_BCRYPT);
-	$sql ="INSERT INTO donor(name,email_id,password,contact_no,status) VALUES ('$_POST[name]','$_POST[donoremailid]','$password','$_POST[contactno]','Active')";
+	$sql ="INSERT INTO donor(name,email_id,password,contact_no) VALUES ('$_POST[name]','$_POST[donoremailid]','$password','$_POST[contactno]')";
 	$qsql = mysqli_query($con,$sql);
 		echo mysqli_error($con);
 	if(mysqli_affected_rows($con) == 1)
@@ -48,7 +48,7 @@ if(isset($_POST['btndonorlogin']))
 }
 if(isset($_POST['btnstafflogin']))
 {
-	$sql  ="SELECT * FROM staff WHERE login_id='$_POST[staffloginid]' AND password='$_POST[staffpassword]' AND status='Active'";
+	$sql  ="SELECT * FROM staff WHERE login_id='$_POST[staffloginid]' AND password='$_POST[staffpassword]'";
 	$qsql =mysqli_query($con,$sql);
 	if(mysqli_num_rows($qsql)  == 1)
 	{
