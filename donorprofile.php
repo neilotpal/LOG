@@ -18,12 +18,12 @@ if(isset($_POST['submit']))
 		$qsql = mysqli_query($con,$sql);
 		if(mysqli_affected_rows($con) == 1)
 		{
-			echo "<script>alert('donor Profile updated successfully..');</script>";
+			echo "<script>alert('Donor Profile updated successfully');</script>";
 		}
 		else
 		{
 			echo mysqli_error($con);
-		}		
+		}
 	}
 }
 ?>
@@ -105,7 +105,7 @@ if(isset($_SESSION['donor_id']))
 		}
 		else
 		{
-			echo "<img src='img/no-image-icon.png' style='height: 300px;' >";	
+			echo "<img src='img/no-image-icon.png' style='height: 300px;' >";
 		}
 		?>
 	</div>
