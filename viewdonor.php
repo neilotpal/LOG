@@ -55,7 +55,6 @@ if(isset($_GET['delid']))
 			<th>PIN Code </th>
 			<th>Email ID </th>
 			<th>Contact No.</th>
-			<th>Status </th>
 			<th>Action </th>
 		</tr>
 	</thead>
@@ -72,10 +71,9 @@ if(isset($_GET['delid']))
 			<td>$rs[pin_code]</td>
 			<td>$rs[email_id]</td>
 			<td>$rs[contact_no]</td>
-			<td>$rs[status]</td>
 			<td>
 			<a href='viewdonor.php?delid=$rs[0]' class='btn btn-danger' onclick='return confirmdel()' >Delete</a>
-		
+
 			</td>
 
 			</tr>";
