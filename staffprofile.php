@@ -33,7 +33,7 @@ if(isset($_SESSION['staff_id']))
 <div class="row">
 <div class="col-md-12">
 <div class="header-content">
-<h2>Admin Profile</h2>
+<h2 style="color: white;">Admin Profile</h2>
 </div>
 </div>
 </div>
