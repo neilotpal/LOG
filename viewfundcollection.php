@@ -43,7 +43,7 @@ if(isset($_GET['delid']))
 		<tr>
 			<th>Fund Raiser detail</th>
 			<th>Donor detail</th>
-			<th style="width: 100px;">Donation Date</th>
+			<th style="width: 120px;">Donation Date</th>
 			<th>Payment Detail</th>
 			<th style='text-align: right;'>Donated Amount</th>
 			<th>Action</th>
