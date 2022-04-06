@@ -164,7 +164,7 @@ include("header.php");
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
 				<div class="cta-content text-center">
-					<h1>Register as DONOR</h1>
+					<h1>Register</h1>
 					<a href="" class="primary-button" onclick="return false" data-toggle="modal" data-target="#DonorLoginModal">Login Panel</a>
 					<a href="" class="primary-button" onclick="return false" data-toggle="modal" data-target="#DonorRegisterModal">Join Us Now</a>
 				</div>
