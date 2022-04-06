@@ -64,11 +64,8 @@ include("header.php");
 </div>
 </div>
 
-
 <div class="col-md-offset-1 col-md-6">
-<a href="#" class="about-video">
 <img src="img/charity/IMG_20191210_133502.jpg" style="heighT: 300px;">
-</a>
 </div>
 
 </div>
@@ -190,12 +187,10 @@ include("header.php");
 <div class="col-md-6">
 <div class="event">
 <div class="event-img">
-<a href="single-event.html">
 <img src="img/event-1.jpg" alt="">
-</a>
 </div>
 <div class="event-content">
-<h3><a href="single-event.html">Help people in need</a></h3>
+<h3>Help people in need</h3>
 <p>Provide direct support to an individual, family or community by paying medical expenses or offering financial aid..</p>
 </div>
 </div>
@@ -205,12 +200,10 @@ include("header.php");
 <div class="col-md-6">
 <div class="event">
 <div class="event-img">
-<a href="single-event.html">
 <img src="img/event-2.jpg" alt="">
-</a>
 </div>
 <div class="event-content">
-<h3><a href="single-event.html">Take action in an emergency</a></h3>
+<h3>Take action in an emergency</h3>
 
 <p>Raise funds in response to a natural disaster or humanitarian crisis. Make a difference in minutes.</p>
 </div>

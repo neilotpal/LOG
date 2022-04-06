@@ -3,10 +3,7 @@ include("header.php");
 ?>
 <link rel="stylesheet" href="css/stylecontact.css">
 <div id="page-header">
-
 <div class="section-bg" style="background-image: url(img/background-2.jpg);"></div>
-
-
 <div class="container">
 <div class="row">
 <div class="col-md-12">
