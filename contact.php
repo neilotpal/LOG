@@ -20,11 +20,8 @@ include("header.php");
 
 
 <div class="section">
-
 <div class="container">
-
 <div class="row">
-
 <main id="main">
 <h3>Contact us.</h3>
 <p>Leave a message...</p>

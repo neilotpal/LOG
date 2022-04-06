@@ -7,6 +7,10 @@ if(!isset($_SESSION['staff_id']))
 {
 	echo "<script>window.location='index.php';</script>";
 }
+if(!isset($_SESSION['staff_id']))
+{
+	echo "<script>window.location='index.php';</script>";
+}
 
 if(isset($_GET['delid']))
 {

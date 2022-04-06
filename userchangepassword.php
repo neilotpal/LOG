@@ -3,6 +3,10 @@ session_start();
 ?>
 <?php
 include("header.php");
+if(!isset($_SESSION['donor_id']))
+{
+	echo "<script>window.location='index.php';</script>";
+}
 if(isset($_POST['submit']))
 {
 	//opassword password

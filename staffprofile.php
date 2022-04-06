@@ -3,6 +3,10 @@ session_start();
 ?>
 <?php
 include("header.php");
+if(!isset($_SESSION['staff_id']))
+{
+	echo "<script>window.location='index.php';</script>";
+}
 if(isset($_POST['submit']))
 {
 		$sql ="UPDATE staff set staff_name='$_POST[staff_name]',login_id='$_POST[login_id]'  WHERE staff_id='$_SESSION[staff_id]'";
