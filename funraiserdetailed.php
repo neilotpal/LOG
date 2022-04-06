@@ -29,42 +29,31 @@ $perc = $perc = round(($rsfund_collection[0] * 100 / $rs['fund_amount']),0)
 
 ?>
 </header>
+
 <style>
 	<?php include 'css\styledonate.css' ?>
 </style>
 
 <div id="cta" class="section">
-
 	<div class="section-bg" style="background-image: url(img/charity/donatebgf1.jpg);height:150"></div>
-
 	<div class="container">
-
 		<div class="row">
-
 			<div class="col-md-12">
 				<div class="cta-content">
 					<h1 class="text-center">A helping hand can be a ray of sunshine in a cloudy world.</h1>
 				</div>
 			</div>
-
 		</div>
-
 	</div>
-
 </div>
 
 
 
 <div class="section">
-
 	<div class="container">
-
 		<div class="row">
-
 			<main id="main" class="col-md-9">
-
 				<div class="article causes-details">
-
 					<h2 class="article-title text-center"><?php echo $rs['title']; ?></h2>
 					<div class="article-img">
 						<?php
@@ -104,12 +93,9 @@ $perc = $perc = round(($rsfund_collection[0] * 100 / $rs['fund_amount']),0)
 						<?php
 						}
 						?>
-						</div>
-
+					</div>
 
 					<div class="article-content">
-
-
 						<ul class="article-meta">
 							<li><b>Started On : <?php echo date("d-M-Y", strtotime($rs['start_date'])); ?></b></li>
 							<li><b>Ends At : <?php echo  date("d-M-Y", strtotime($rs['end_date'])); ?></b></li>
