@@ -10,6 +10,7 @@
     color: rgb(53, 53, 53);
     background-color: rgba(240, 248, 255, 0.397);
 }
+
 #backghead{
     min-height: 400px;
     background-size: 100% 100%;
@@ -33,6 +34,70 @@
     color: rgb(5, 123, 202);
     border-radius: 10px;
 }
+.cards{
+  /*border:1px solid #d5e1df;*/
+  border-radius: 10px;
+  padding:13px;
+  float:left;
+  margin: 5px 0px;
+  height:68rem;
+}
+.cards:hover{
+  box-shadow: 0 0 6px 5px rgb(214, 213, 213);
+}
+@media (max-width:1440px){
+  .cards{
+    height:72rem;
+  }
+}
+@media (max-width:1024px){
+  .cards{
+    height:80rem;
+  }
+}
+@media (max-width:765px){
+  .cards{
+    margin: 10px 10px;
+    height:70rem;
+  }
+}
+@media (max-width:425px){
+  .cards{
+    margin: 10px 25px;
+    height:71rem;
+  }
+}
+@media (max-width:375px){
+  .cards{
+    margin: 10px 25px;
+    height:73rem;
+  }
+}
+@media (max-width:320px){
+  .cards{
+    margin: 10px 10px;
+    height:75rem;
+  }
+}
+/*@media (max-width:1440px){
+  .cards{
+    height:60vh;
+  }
+}
+@media (max-width:1024px){
+  .cards{
+    height:70vh;
+  }
+}
+@media (max-width:768px){
+  .cards{
+    height:55vh;
+    margin: 10px 25px;
+  }
+}
+@media (max-width:510px){
+
+}*/
 .article-description{
     margin-top: 30px;
     border: 1px solid black;

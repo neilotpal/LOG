@@ -35,7 +35,7 @@
 						$rsfund_collection = mysqli_fetch_array($qsqlfund_collection);
  						$perc = round(($rsfund_collection[0] * 100 / $rs['fund_amount']),0)
 					?>
-					<div class="col-sm-4">
+					<div class="col-sm-4 cards">
 						<div class="causes">
 							<div class="causes-img">
 								<a href="funraiserdetailed.php?fund_raiser_id=<?php echo $rs[0]; ?>">
@@ -56,7 +56,7 @@
 							</a>
 						</div>
 
-						<div class="causes-progress">
+						<div class="causes-progress" style="padding-left:12px">
 							<div class="causes-progress-bar">
 								<div style="width: <?php echo $perc; ?>%;">
 									<span><?php echo $perc ?>%</span>
