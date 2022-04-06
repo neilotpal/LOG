@@ -1,6 +1,5 @@
 <?php
 include("header.php");
-
 ?>
 </header>
 <div id="about" class="section">
