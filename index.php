@@ -46,7 +46,7 @@ include("header.php");
 					<div class="col-md-8">
 						<div class="home-content">
 							<h1 style="color:black;">Donate Items</h1>
-							<p class="lead"style="color:black;font-weight:bold" ><i>Donate items like clothes, toys, stationery etc..</i></p>
+							<p class="lead"style="color:black;font-weight:bold" ><i>Donate items like clothes, toys, stationery etc</i></p>
 
 						</div>
 					</div>
@@ -165,8 +165,8 @@ include("header.php");
 			<div class="col-md-offset-2 col-md-8">
 				<div class="cta-content text-center">
 					<h1>Register as DONOR</h1>
-					<a href="" class="primary-button" onclick="return false" data-toggle="modal" data-target="#DonorLoginModal">Login Panel...</a>
-					<a href="" class="primary-button" onclick="return false" data-toggle="modal" data-target="#DonorRegisterModal">Join Us Now...</a>
+					<a href="" class="primary-button" onclick="return false" data-toggle="modal" data-target="#DonorLoginModal">Login Panel</a>
+					<a href="" class="primary-button" onclick="return false" data-toggle="modal" data-target="#DonorRegisterModal">Join Us Now</a>
 				</div>
 			</div>
 
