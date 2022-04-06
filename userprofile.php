@@ -22,7 +22,7 @@ if(isset($_POST['submit']))
 		$qsql = mysqli_query($con,$sql);
 		if(mysqli_affected_rows($con) == 1)
 		{
-			echo "<script>alert('Donor Profile updated successfully');</script>";
+			echo "<script>alert('Profile updated successfully');</script>";
 		}
 		else
 		{
@@ -50,7 +50,7 @@ if(isset($_SESSION['donor_id']))
 <div class="row">
 <div class="col-md-12">
 <div class="header-content">
-<h1>Donor Profile</h1>
+<h1>User Profile</h1>
 </div>
 </div>
 </div>

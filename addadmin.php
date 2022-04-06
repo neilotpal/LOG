@@ -16,8 +16,8 @@ if(isset($_POST['submit']))
 	$qsql = mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('staff record inserted successfully..');</script>";
-		echo "<script>window.location='staff.php';</script>";
+		echo "<script>alert('Admin added successfully..');</script>";
+		echo "<script>window.location='addadmin.php';</script>";
 	}
 	else
 	{
