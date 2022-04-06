@@ -96,14 +96,11 @@ else
 			<td><b>$rs[status]</b>";
 echo "</td>
 <td>";
-echo "<a href='fund.php?editid=$rs[0]'  class='btn btn-primary' style='margin-right:10px' >Edit</a>";
-
-echo "<a href='viewfund.php?delid=$rs[0]' class='btn btn-danger' onclick='return confirmdel()' >Delete</a><br><br>";
 
 if($rs['status'] == 'Pending')
 {
 
-echo "<a href='viewfund.php?fund_raiser_id=$rs[0]&st=Accepted'  class='btn btn-success' style='margin-right:10px' onclick='return confirmst()' >Accept</a>";
+echo "<a href='viewfund.php?fund_raiser_id=$rs[0]&st=Active'  class='btn btn-success' style='margin-right:10px' onclick='return confirmst()' >Accept</a>";
 echo "<a href='viewfund.php?fund_raiser_id=$rs[0]&st=Rejected'  class='btn btn-warning' onclick='return confirmst()' >Reject</a>";
 
 }

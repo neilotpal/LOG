@@ -192,7 +192,7 @@ include("header.php");
 
 
 			<?php
-			$sql = "SELECT * FROM fund_raiser where status='Active' order by fund_raiser_id DESC  limit 3";
+			$sql = "SELECT * FROM fund_raiser where status='Active' AND end_date>curdate() order by fund_raiser_id DESC  limit 3";
 			$qsql = mysqli_query($con, $sql);
 			while ($rs = mysqli_fetch_array($qsql)) {
 				$perc = 0;
