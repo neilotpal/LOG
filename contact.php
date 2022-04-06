@@ -67,7 +67,7 @@ if (isset($_POST['submit'])){
 
     if (mysqli_query($con, $sql))
     {
-        echo "New record added successfully";
+        echo "We will contact you soon";
     }
     else
     {

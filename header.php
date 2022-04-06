@@ -190,7 +190,7 @@ else if(isset($_SESSION['staff_id']))
 {
 ?>
 <li><a href="dashboard.php">Dashboard</a></li>
-
+<li><a href="viewcontact.php">Contact Queries</a></li>
 <li class="has-dropdown"><a href="#">Fundraiser</a>
 	<ul class="dropdown">
 		<li><a href="viewfundcollection.php" >View fund collection</a></li>

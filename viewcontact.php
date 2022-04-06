@@ -7,21 +7,21 @@ if(!isset($_SESSION['staff_id']))
 {
 	echo "<script>window.location='index.php';</script>";
 }
+
 if(isset($_GET['delid']))
 {
-	$sql = "DELETE FROM donor WHERE donor_id='$_GET[delid]'";
+	$sql = "DELETE FROM contact WHERE con_id='$_GET[delid]'";
 	$qsql = mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('Donor record deleted successfully');</script>";
-		echo "<script>window.location='viewdonor.php';</script>";
+		echo "<script>alert('Query deleted successfully');</script>";
+		echo "<script>window.location='viewcontact.php';</script>";
 	}
 	else
 	{
 		echo mysqli_error($con);
 	}
 }
-
 ?>
 </header>
 <div id="about" class="section">
@@ -29,7 +29,7 @@ if(isset($_GET['delid']))
 		<div class="row">
 			<div class="col-md-12">
 			<div class="section-title">
-			<center><h2 class="title">view donor</h2></center>
+			<h2 class="title text-center">Contact Queries</h2>
 			</div>
 			</div>
 		</div>
@@ -50,31 +50,42 @@ if(isset($_GET['delid']))
 	<thead>
 		<tr>
 			<th>Name</th>
-			<th>Address</th>
-			<th>City </th>
-			<th>PIN Code </th>
-			<th>Email ID </th>
-			<th>Contact No.</th>
-			<th>Action </th>
+			<th>Email</th>
+			<th>Subject</th>
+			<th>Message</th>
+      <th>Action</th>
 		</tr>
 	</thead>
 	<tbody>
-				<?php
-	$sql = "SELECT * FROM donor";
+		<?php
+	$sql = "SELECT * FROM contact";
 	$qsql = mysqli_query($con,$sql);
 	while($rs = mysqli_fetch_array($qsql))
 	{
 		echo "<tr>
-			<td>$rs[name]</td>
-			<td>$rs[address]</td>
-			<td>$rs[city]</td>
-			<td>$rs[pin_code]</td>
-			<td>$rs[email_id]</td>
-			<td>$rs[contact_no]</td>
-			<td>
-			<a href='viewdonor.php?delid=$rs[0]' class='btn btn-danger' onclick='return confirmdel()' >Delete</a>
+			<td style='text-align: left;'>";
 
-			</td>
+		echo "<b>".$rs['cname'] . "</b><br>";
+		echo "</td>
+
+		<td style='text-align: left;'>";
+
+		echo "<b>".$rs['cemail'] . "</b><br>";
+		echo "</td>
+
+    <td style='text-align: left;'>";
+
+		echo "<b>".$rs['csubject'] . "</b><br>";
+		echo "</td>
+
+    <td style='text-align: left;'>";
+
+		echo "<b>".$rs['cmessage'] . "</b><br>";
+		echo "</td>
+
+	   <td>
+			<a href='viewcontact.php?delid=$rs[0]' class='btn btn-danger' onclick='return confirmdel()' style='margin-top:5px' >Delete</a>
+		</td>
 
 			</tr>";
 	}
