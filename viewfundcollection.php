@@ -1,5 +1,6 @@
 <?php
 include("header.php");
+
 if(isset($_GET['delid']))
 {
 	$sql = "DELETE FROM fund_collection WHERE fund_collection_id='$_GET[delid]'";
