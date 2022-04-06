@@ -1,5 +1,6 @@
 <?php
 include("header.php");
+
 /* Getting data from database */
 if(isset($_GET['fund_collection_id']))
 {

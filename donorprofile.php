@@ -3,6 +3,10 @@ session_start();
 ?>
 <?php
 include("header.php");
+if(!isset($_SESSION['donor_id']))
+{
+	echo "<script>window.location='index.php';</script>";
+}
 if(isset($_POST['submit']))
 {
 	$profile_img = rand() . $_FILES["profile_img"]["name"];

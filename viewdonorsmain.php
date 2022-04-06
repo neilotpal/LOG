@@ -1,5 +1,9 @@
 <?php
 include("header.php");
+if(!isset($_SESSION['staff_id']))
+{
+	echo "<script>window.location='index.php';</script>";
+}
 ?>
 </header>
 <div id="about" class="section">
