@@ -213,6 +213,7 @@ else if(isset($_SESSION['staff_id']))
 	<ul class="dropdown">
 		<li><a href="staffprofile.php">Admin Profile</a></li>
 		<li><a href="staffchangepassword.php" >Change password</a></li>
+		<li><a href="staff.php" >Add Admin</a></li>
 		<li><a href="logout.php" >Logout</a></li>
 	</ul>
 </li>
