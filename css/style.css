@@ -628,7 +628,6 @@ textarea.input {
 
 .causes {
   margin-bottom: 60px;
-  padding: 5px 5px;
 }
 
 .causes .causes-img {
@@ -659,7 +658,8 @@ textarea.input {
 }
 
 .causes .causes-progress {
-  margin-top: 45px
+  margin-top: 45px;
+
 }
 
 .causes-progress .causes-progress-bar {
