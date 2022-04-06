@@ -79,25 +79,6 @@
     height:75rem;
   }
 }
-/*@media (max-width:1440px){
-  .cards{
-    height:60vh;
-  }
-}
-@media (max-width:1024px){
-  .cards{
-    height:70vh;
-  }
-}
-@media (max-width:768px){
-  .cards{
-    height:55vh;
-    margin: 10px 25px;
-  }
-}
-@media (max-width:510px){
-
-}*/
 .article-description{
     margin-top: 30px;
     border: 1px solid black;

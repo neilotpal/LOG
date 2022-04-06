@@ -1,8 +1,10 @@
 <?php
 session_start();
 include("header.php");
-if (isset($_POST['submit'])) {
-	$payment_detail = serialize(array($_POST['cardholder'], $_POST['cardnumber'], $_POST['month'], $_POST['cvv']));
+if(isset($_POST['submit'])) {
+	$cvv=$_POST['cvv'];
+	$cvv=password_hash($cvv,PASSWORD_BCRYPT);
+	$payment_detail = serialize(array($_POST['cardholder'], $_POST['cardnumber'], $_POST['month'], $cvv));
 	$sql = "INSERT INTO fund_collection( fund_raiser_id, donor_id, name, paid_amt, paid_date, payment_type, payment_detail, status) VALUES('$_GET[fund_raiser_id]','$_SESSION[donor_id]','$_POST[donorname]','$_POST[donationamount]','$dt','$_POST[payment_type]','$payment_detail','Active')";
 	$qsql = mysqli_query($con, $sql);
 	if (mysqli_affected_rows($con) == 1) {
@@ -351,8 +353,8 @@ include("footer.php");
 		var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,6}$/;
 		var mobno = /^[6-9]\d{9}$/;
 
-		if (document.getElementById("donationamount").value <= 0) {
-			document.getElementById("errdonationamount").innerHTML = "Minimum donation amount is 1.";
+		if (document.getElementById("donationamount").value <50 ) {
+			document.getElementById("errdonationamount").innerHTML = "Minimum donation amount is 50.";
 			i = 1;
 		}
 		if (document.getElementById("donationamount").value == "") {
