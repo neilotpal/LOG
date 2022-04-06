@@ -245,15 +245,15 @@ include("header.php");
     </div>
     <div class="v_col col-lg-4 col-md-6">
       <i class="fi-cwluxx-smiley-happy-wide"></i>
-      <h6 class="desc">Partnered with 2,000+ NGOs across the country</h6>
+      <h6 class="desc">Partnered with NGOs across the country</h6>
     </div>
     <div class="v_col col-lg-4 col-md-6">
         <i class="fi-onsuxx-dot-currency"></i>
-      <h6 class="desc">Donations in all currencies with tax benefit for India, US and UK</h6>
+      <h6 class="desc">Donations in India to help needy , victims and underpriviledged</h6>
     </div>
     <div class="v_col col-lg-4 col-md-6">
         <i class="fi-xnsuxx-house-solid"></i>
-      <h6 class="desc">CSR and employee giving through trusted NGOs</h6>
+      <h6 class="desc">we help people build themselves with their self-confidence</h6>
     </div>
   </div>
 </section>
