@@ -64,6 +64,7 @@ if(isset($_POST['btnstafflogin']))
 			 else
 			 {
 				 echo '<script>alert("wrong user details")</script>';
+				 echo "<script>window.location='index.php';</script>";
 			 }
 
 		}
@@ -71,6 +72,7 @@ if(isset($_POST['btnstafflogin']))
 	else
 	{
 		echo "<script>alert('You have entered Invalid login credentials..');</script>";
+		echo "<script>window.location='index.php';</script>";
 	}
 }
 if(isset($_SESSION['donor_id']))
