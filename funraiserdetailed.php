@@ -202,10 +202,7 @@ $perc = $perc = round(($rsfund_collection[0] * 100 / $rs['fund_amount']),0)
 
 
 			<aside id="aside" class="col-md-3">
-
-
 				<div class="widget">
-
 					<h3 class="widget-title">Recent Donations</h3>
 
 					<?php

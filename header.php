@@ -223,7 +223,7 @@ else
 ?>
 <li><a href="index.php">Home</a></li>
 <li><a href="about.php">About</a></li>
-<li><a href="fundraiser.php">Fund Donation</a></li>
+<li><a href="fundraiser.php">Donate Funds</a></li>
 <li><a href="contact.php">Contact</a></li>
 <li class="has-dropdown"><a href="#">User</a>
 	<ul class="dropdown">
