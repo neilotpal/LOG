@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("header.php");
-//item_donor_id st
+//item_donor_id st-STATUS
 if(isset($_GET['st']))
 {
 	$sqlupd = "UPDATE item_donor SET status='$_GET[st]' WHERE  item_donor_id='$_GET[item_donor_id]'";
