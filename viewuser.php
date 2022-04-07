@@ -13,8 +13,8 @@ if(isset($_GET['delid']))
 	$qsql = mysqli_query($con,$sql);
 	if(mysqli_affected_rows($con) == 1)
 	{
-		echo "<script>alert('Donor record deleted successfully');</script>";
-		echo "<script>window.location='viewdonor.php';</script>";
+		echo "<script>alert('User record deleted successfully');</script>";
+		echo "<script>window.location='viewuser.php';</script>";
 	}
 	else
 	{
@@ -29,7 +29,7 @@ if(isset($_GET['delid']))
 		<div class="row">
 			<div class="col-md-12">
 			<div class="section-title">
-			<center><h2 class="title">view donor</h2></center>
+			<center><h2 class="title">view User</h2></center>
 			</div>
 			</div>
 		</div>

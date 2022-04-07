@@ -226,8 +226,8 @@ include("header.php");
 								</div>
 							</div>
 							<div>
-								<span class="causes-raised">Raised: <strong>₹<?php echo $rsfund_collection[0]; ?></strong></span>
-								<span class="causes-goal">Goal: <strong>₹<?php echo $rs['fund_amount']; ?></strong></span>
+								<span class="causes-raised">Donated: <strong>₹<?php echo $rsfund_collection[0]; ?></strong></span>
+								<span class="causes-goal">Raised: <strong>₹<?php echo $rs['fund_amount']; ?></strong></span>
 							</div>
 						</div>
 						<div class="causes-content">

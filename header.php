@@ -201,7 +201,7 @@ else if(isset($_SESSION['staff_id']))
 <li class="has-dropdown"><a href="#">Report</a>
 	<ul class="dropdown">
 
-		<li><a href="viewdonor.php" >View Donor</a></li>
+		<li><a href="viewuser.php" >View User</a></li>
 		<li><a href="viewitemdonor.php" >View Item Donor</a></li>
 
 	</ul>
