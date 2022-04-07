@@ -21,11 +21,11 @@ $qsql = mysqli_query($con, $sql);
 $rs = mysqli_fetch_array($qsql);
 
 $perc = 0;
-$sqlfund_collection = "SELECT SUM(paid_amt) FROM fund_collection where fund_raiser_id='$rs[0]' AND status='Active'";
+$sqlfund_collection = "SELECT SUM(paid_amt) as paidamt FROM fund_collection where fund_raiser_id='$rs[fund_raiser_id]' AND status='Active'";
 $qsqlfund_collection = mysqli_query($con, $sqlfund_collection);
 $rsfund_collection = mysqli_fetch_array($qsqlfund_collection);
 
-$perc = $perc = round(($rsfund_collection[0] * 100 / $rs['fund_amount']),0)
+$perc = $perc = round(($rsfund_collection['paidamt'] * 100 / $rs['fund_amount']),0)
 
 ?>
 </header>
@@ -76,7 +76,7 @@ $perc = $perc = round(($rsfund_collection[0] * 100 / $rs['fund_amount']),0)
 								</div>
 							</div>
 							<div>
-								<span class="causes-raised">Donated: <strong>₹<?php echo $rsfund_collection[0]; ?></strong></span>
+								<span class="causes-raised">Donated: <strong>₹<?php echo $rsfund_collection['paidamt']; ?></strong></span>
 								<span class="causes-goal">Raised: <strong>₹<?php echo $rs['fund_amount']; ?></strong></span>
 							</div>
 						</div>
