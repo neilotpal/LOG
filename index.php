@@ -269,7 +269,7 @@ include("header.php");
 						</a>
 					</div>
 					<div class="event-content">
-						<h3><a href="#">Help people in need</a></h3>
+						<h3>Help people in need</h3>
 						<p>Provide direct support to an individual, family or community by paying medical expenses or offering financial aid..</p>
 					</div>
 				</div>
@@ -284,7 +284,7 @@ include("header.php");
 						</a>
 					</div>
 					<div class="event-content">
-						<h3><a href="#">Take action in an emergency</a></h3>
+						<h3>Take action in an emergency</h3>
 
 						<p>Raise funds in response to a natural disaster or humanitarian crisis. Make a difference in minutes.</p>
 					</div>
