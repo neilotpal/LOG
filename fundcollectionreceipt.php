@@ -62,7 +62,7 @@ if(isset($_GET['fund_collection_id']))
 
 								<td style="text-align: right;" valign="top">
 									<b>Date : </b><?php echo date("d-M-Y",strtotime($rsfund_collection['paid_date'])); ?><br>
-									<b>Bill No. :</b><?php echo $rsfund_collection[0]; ?>
+									<b>Bill No. :</b><?php echo $rsfund_collection['fund_collection_id']; ?>
 								</td>
 						</tr>
 					</thead>

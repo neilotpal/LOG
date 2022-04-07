@@ -21,11 +21,11 @@ $qsql = mysqli_query($con, $sql);
 $rs = mysqli_fetch_array($qsql);
 
 $perc = 0;
-$sqlfund_collection = "SELECT SUM(paid_amt) FROM fund_collection where fund_raiser_id='$rs[0]' AND status='Active'";
+$sqlfund_collection = "SELECT SUM(paid_amt) as paidamt FROM fund_collection where fund_raiser_id='$rs[fund_raiser_id]' AND status='Active'";
 $qsqlfund_collection = mysqli_query($con, $sqlfund_collection);
 $rsfund_collection = mysqli_fetch_array($qsqlfund_collection);
 
-$perc = $perc = round(($rsfund_collection[0] * 100 / $rs['fund_amount']),0)
+$perc = $perc = round(($rsfund_collection['paidamt'] * 100 / $rs['fund_amount']),0)
 
 ?>
 </header>
@@ -76,7 +76,7 @@ $perc = $perc = round(($rsfund_collection[0] * 100 / $rs['fund_amount']),0)
 								</div>
 							</div>
 							<div>
-								<span class="causes-raised">Donated: <strong>₹<?php echo $rsfund_collection[0]; ?></strong></span>
+								<span class="causes-raised">Donated: <strong>₹<?php echo $rsfund_collection['paidamt']; ?></strong></span>
 								<span class="causes-goal">Raised: <strong>₹<?php echo $rs['fund_amount']; ?></strong></span>
 							</div>
 						</div>
@@ -202,10 +202,7 @@ $perc = $perc = round(($rsfund_collection[0] * 100 / $rs['fund_amount']),0)
 
 
 			<aside id="aside" class="col-md-3">
-
-
 				<div class="widget">
-
 					<h3 class="widget-title">Recent Donations</h3>
 
 					<?php
@@ -246,7 +243,7 @@ $perc = $perc = round(($rsfund_collection[0] * 100 / $rs['fund_amount']),0)
 				<div class="widget">
 					<h3 class="widget-title">Top donors</h3>
 					<?php
-					$sql = "SELECT fund_collection.name, SUM(fund_collection.paid_amt) as subamt, donor.profile_img FROM `fund_collection` left join donor on fund_collection.donor_id=donor.donor_id  GROUP BY fund_collection.donor_id order by SUM(fund_collection.paid_amt) desc limit 4";
+					$sql = "SELECT fund_collection.name, SUM(fund_collection.paid_amt) as subamt, donor.profile_img FROM fund_collection left join donor on fund_collection.donor_id=donor.donor_id  GROUP BY fund_collection.donor_id order by SUM(fund_collection.paid_amt) desc limit 4";
 					$qsql = mysqli_query($con, $sql);
 					while ($rs = mysqli_fetch_array($qsql)) {
 					?>

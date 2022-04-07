@@ -26,19 +26,22 @@
 				<div class="row">
 					<?php
 					$sql = "SELECT * FROM fund_raiser where status='Active'AND end_date>curdate()";
+					//Retrieving the contents of the fund_raiser table
 					$qsql = mysqli_query($con,$sql);
+
+					//Fetching all the rows as arrays
 					while($rs = mysqli_fetch_array($qsql))
 					{
 						$perc=0;
-						$sqlfund_collection = "SELECT SUM(paid_amt) FROM fund_collection where fund_raiser_id='$rs[0]' AND status='Active'";
+						$sqlfund_collection = "SELECT SUM(paid_amt) AS paidamt FROM fund_collection where fund_raiser_id='$rs[fund_raiser_id]' AND status='Active'";
 						$qsqlfund_collection = mysqli_query($con,$sqlfund_collection);
 						$rsfund_collection = mysqli_fetch_array($qsqlfund_collection);
- 						$perc = round(($rsfund_collection[0] * 100 / $rs['fund_amount']),0)
+ 						$perc = round(($rsfund_collection['paidamt'] * 100 / $rs['fund_amount']),0)
 					?>
 					<div class="col-sm-4 cards">
 						<div class="causes">
 							<div class="causes-img">
-								<a href="funraiserdetailed.php?fund_raiser_id=<?php echo $rs[0]; ?>">
+								<a href="funraiserdetailed.php?fund_raiser_id=<?php echo $rs['fund_raiser_id']; ?>">
 									<?php
 									if($rs['banner_img'] == "")
 									{
@@ -64,15 +67,15 @@
 							</div>
 
 							<div>
-								<span class="causes-raised">Donated: <strong>₹<?php echo $rsfund_collection[0]; ?></strong></span>
+								<span class="causes-raised">Donated: <strong>₹<?php echo $rsfund_collection['paidamt']; ?></strong></span>
 								<span class="causes-goal">Raised: <strong>₹<?php echo $rs['fund_amount']; ?></strong></span>
 							</div>
 						</div>
 
 						<div class="causes-content">
-							<h3><a href="funraiserdetailed.php?fund_raiser_id=<?php echo $rs[0]; ?>"><?php echo  $rs['title']; ?></a></h3>
+							<h3><a href="funraiserdetailed.php?fund_raiser_id=<?php echo $rs['fund_raiser_id']; ?>"><?php echo  $rs['title']; ?></a></h3>
 							<p><?php echo  $string = substr($rs['fund_raiser_description'],0,100).'...'; ?></p>
-							<a href="funraiserdetailed.php?fund_raiser_id=<?php echo $rs[0]; ?>" class="primary-button causes-donate">Donate Now</a>
+							<a href="funraiserdetailed.php?fund_raiser_id=<?php echo $rs['fund_raiser_id']; ?>" class="primary-button causes-donate">Donate Now</a>
 						</div>
 
 					</div>

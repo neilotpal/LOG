@@ -192,7 +192,7 @@ include("header.php");
 
 
 			<?php
-			$sql = "SELECT * FROM fund_raiser where status='Active' AND end_date>curdate() order by fund_raiser_id DESC  limit 3";
+			$sql = "SELECT * FROM fund_raiser where status='Active' AND end_date>curdate() order by fund_raiser_id DESC limit 3";
 			$qsql = mysqli_query($con, $sql);
 			while ($rs = mysqli_fetch_array($qsql)) {
 				$perc = 0;
@@ -226,8 +226,8 @@ include("header.php");
 								</div>
 							</div>
 							<div>
-								<span class="causes-raised">Raised: <strong>₹<?php echo $rsfund_collection[0]; ?></strong></span>
-								<span class="causes-goal">Goal: <strong>₹<?php echo $rs['fund_amount']; ?></strong></span>
+								<span class="causes-raised">Donated: <strong>₹<?php echo $rsfund_collection[0]; ?></strong></span>
+								<span class="causes-goal">Raised: <strong>₹<?php echo $rs['fund_amount']; ?></strong></span>
 							</div>
 						</div>
 						<div class="causes-content">
