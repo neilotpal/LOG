@@ -243,7 +243,7 @@ $perc = $perc = round(($rsfund_collection[0] * 100 / $rs['fund_amount']),0)
 				<div class="widget">
 					<h3 class="widget-title">Top donors</h3>
 					<?php
-					$sql = "SELECT fund_collection.name, SUM(fund_collection.paid_amt) as subamt, donor.profile_img FROM `fund_collection` left join donor on fund_collection.donor_id=donor.donor_id  GROUP BY fund_collection.donor_id order by SUM(fund_collection.paid_amt) desc limit 4";
+					$sql = "SELECT fund_collection.name, SUM(fund_collection.paid_amt) as subamt, donor.profile_img FROM fund_collection left join donor on fund_collection.donor_id=donor.donor_id  GROUP BY fund_collection.donor_id order by SUM(fund_collection.paid_amt) desc limit 4";
 					$qsql = mysqli_query($con, $sql);
 					while ($rs = mysqli_fetch_array($qsql)) {
 					?>
