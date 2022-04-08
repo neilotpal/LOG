@@ -280,29 +280,29 @@ function validateform()
 
 	if(document.getElementById("title").value=="")
 	{
-		document.getElementById("errtitle").innerHTML = "Kindly enter title...";
+		document.getElementById("errtitle").innerHTML = "Kindly enter title";
 		i = 1;
 	}
 	if(document.getElementById("banner_img").value=="")
 	{
-		document.getElementById("errbanner_img").innerHTML = "Kindly enter banner image...";
+		document.getElementById("errbanner_img").innerHTML = "Kindly enter banner image";
 		i = 1;
 	}
 	if(document.getElementById("fund_raiser_description").value=="")
 	{
-		document.getElementById("errfund_raiser_description").innerHTML = "Kindly enter fund raiser description...";
+		document.getElementById("errfund_raiser_description").innerHTML = "Kindly enter fund raiser description";
 		i = 1;
 	}
 
 	if(document.getElementById("end_date").value=="")
 	{
-		document.getElementById("errend_date").innerHTML = "Kindly enter End date...";
+		document.getElementById("errend_date").innerHTML = "Kindly enter End date";
 		i = 1;
 	}
 
 	if(!document.getElementById("fund_amount").value.match(numericExp))
 	{
-		document.getElementById("errfund_amount").innerHTML = "Entered Fund Amount is not valid...";
+		document.getElementById("errfund_amount").innerHTML = "Entered Fund Amount is not valid";
 		i = 1;
 	}
 	if(document.getElementById("account_no").value=="")

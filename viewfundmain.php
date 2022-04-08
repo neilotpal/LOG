@@ -10,7 +10,7 @@ if(!isset($_SESSION['donor_id']))
 
 ?>
 <?php
-//item_donor_id st
+
 
 
 if(isset($_GET['delid']))
@@ -70,7 +70,7 @@ if(isset($_GET['delid']))
     }
     $qsql = mysqli_query($con,$sql);
 
-	/*$sql = "SELECT * FROM fund_raiser";*/
+
 	$qsql = mysqli_query($con,$sql);
 	while($rs = mysqli_fetch_array($qsql))
 	{
