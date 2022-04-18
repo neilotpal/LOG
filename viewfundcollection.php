@@ -56,6 +56,7 @@ if(isset($_GET['delid']))
 	{
 		$sql = $sql . " AND fund_collection.donor_id='$_SESSION[donor_id]'";
 	}
+
 	$qsql = mysqli_query($con,$sql);
 	while($rs = mysqli_fetch_array($qsql))
 	{
@@ -75,11 +76,7 @@ if(isset($_GET['delid']))
 		echo "</td>
 			<td>" . date("d-M-Y",strtotime($rs['paid_date'])) . "</td>
 			<td style='text-align: left;'>";
-		$payment_detail =  unserialize($rs['payment_detail']);
-		echo "<b>Payment Type -</b> " . $rs['payment_type'] . "<br>";
-		echo "<b>Card holder -</b> " .$payment_detail[0] . "<br>";
-		echo "<b>Card Number -</b> " .$payment_detail[1] . "<br>";
-		echo "<b>Expiry date -</b> " .$payment_detail[2] . "<br>";
+		echo "<b>Payment ID -</b> " . $rs['payementid'] . "<br>";
 		echo "</td>
 			<th style='text-align: right;'>₹$rs[paid_amt]</th>
 			<td>

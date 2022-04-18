@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("header.php");
-if(isset($_POST['submit'])) {
+/*if(isset($_POST['submit'])) {
 	$cvv=$_POST['cvv'];
 	$cvv=password_hash($cvv,PASSWORD_BCRYPT);
 	$payment_detail = serialize(array($_POST['cardholder'], $_POST['cardnumber'], $_POST['month'], $cvv));
@@ -14,7 +14,7 @@ if(isset($_POST['submit'])) {
 	} else {
 		echo mysqli_error($con);
 	}
-}
+}*/
 $fid="$_GET[fund_raiser_id]";
 $sql = "SELECT * FROM fund_raiser where status='Active' AND fund_raiser_id='$_GET[fund_raiser_id]'";
 $qsql = mysqli_query($con, $sql);
@@ -122,69 +122,39 @@ $perc = $perc = round(($rsfund_collection['paidamt'] * 100 / $rs['fund_amount'])
 								</div>
 								<div class="modal-body">
 									<p>
-									<form method="post" action="" onsubmit="return fun_validate()">
+									<!--<form method="post" action="action_otp.php" onsubmit="return fun_validate()">-->
+									<form method="POST" action="razorpay-php-testapp-master\pay.php" onsubmit="return fun_validate()">
 										<div class="row">
-											<div class="col-md-6">
+											<div class="col-md-10">
 												<div class="form-group">
 													<b>Donation Amount: </b>
-													<input class="input" name="donationamount" id="donationamount" type="number" placeholder="Donation Amount" min="50" value="50">
+													<input class="input" name="amount" id="donationamount" type="number" placeholder="Enter the Amount" min="50" value="<?php $rsdonor['amount'];?>">
 													<span id="errdonationamount" class="errorclass"></span>
 												</div>
 											</div>
-											<div class="col-md-6">
+											<div class="col-md-10">
 												<div class="form-group">
 													<b>Donor Name: </b>
-													<input class="input" name="donorname" id="donorname" type="text" placeholder="Donor Name" value="<?php echo $rsdonor['name']; ?>">
+													<input class="input" name="name" id="donorname" type="text" placeholder="Donor Name" value="<?php echo $rsdonor['name']; ?>" style="background-color:#e6f6fe" readonly>
 													<span id="errdonorname" class="errorclass"></span>
 												</div>
 											</div>
-										</div>
-
-										<div class="row">
-											<div class="col-md-6">
-												<div class="form-group">
-													<b>Payment Type: </b>
-													<select name="payment_type" id="payment_type" class="form-control">
-														<option value="">Select Payment Type</option>
-														<?php
-														$arr = array("VISA", "MASTER CARD", "AMERICAN EXPRESS", "RUPAY");
-														foreach ($arr as $val) {
-															echo "<option vlaue='$val'>$val</option>";
-														}
-														?>
-													</select>
-													<span id="errpayment_type" class="errorclass"></span>
-												</div>
-											</div>
-											<div class="col-md-6">
-												<div class="form-group">
-													<b>Card holder: </b>
-													<input class="input" type="text" name="cardholder" id="cardholder" placeholder="Card holder">
-													<span id="errcardholder" class="errorclass"></span>
-												</div>
-											</div>
-											<div class="col-md-6">
-												<div class="form-group">
-													<b>Card Number: </b>
-													<input name="cardnumber" id="cardnumber" class="input" type="number" placeholder="Card Number">
-													<span id="errcardnumber" class="errorclass"></span>
-												</div>
-											</div>
-											<div class="col-md-6">
-												<div class="form-group">
-													<b>Expiry date: </b>
-													<input class="input" type="month" name="month" id="month" placeholder="Expiry date">
-													<span id="errmonth" class="errorclass"></span>
-												</div>
-											</div>
-											<div class="col-md-6">
-												<div class="form-group">
-													<b>CVV Number: </b>
-													<input class="input" placeholder="CVV Number" name="cvv" id="cvv" type="number" min="101" max="999">
-													<span id="errcvv" class="errorclass"></span>
-												</div>
+										<div class="col-md-10">
+											<div class="form-group">
+												<b>Donor Email: </b>
+												<input class="input" name="email_id" id="donoremail" type="email" placeholder="Donor Email" value="<?php echo $rsdonor['email_id']; ?> " style="background-color:#e6f6fe" readonly>
+												<span id="errdonorname" class="errorclass"></span>
 											</div>
 										</div>
+									<div class="col-md-10">
+										<div class="form-group">
+											<b>Phone No: </b>
+											<input class="input" name="contact_no" id="donormobile" type="text" placeholder="Donor Phone No" value="<?php echo $rsdonor['contact_no']; ?>" style="background-color:#e6f6fe" readonly>
+											<span id="errdonorname" class="errorclass"></span>
+										</div>
+									</div>
+									<input type="hidden" value="<?php echo 'OID'.rand(100,1000);?>" name="orderid">
+									<input type="hidden" value="<?php echo $_GET['fund_raiser_id'] ?>" name="fund_raiser_id">
 
 										</p>
 								</div>
@@ -328,60 +298,9 @@ include("footer.php");
 <script>
 	function fun_validate() {
 		var i = 0;
-		$('.errorclass').html('');
-		var numericExpression = /^[0-9]+$/;
-		var alphaExp = /^[a-zA-Z]+$/;
-		var alphaSpaceExp = /^[a-zA-Z\s]+$/;
-		var alphaNumericExp = /^[0-9a-zA-Z]+$/;
-		var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,6}$/;
-		var mobno = /^[6-9]\d{9}$/;
 
 		if (document.getElementById("donationamount").value <50 ) {
 			document.getElementById("errdonationamount").innerHTML = "Minimum donation amount is 50.";
-			i = 1;
-		}
-		if (document.getElementById("donationamount").value == "") {
-			document.getElementById("errdonationamount").innerHTML = "Donation Amount should not be empty..";
-			i = 1;
-		}
-		if (!document.getElementById("donorname").value.match(alphaSpaceExp)) {
-			document.getElementById("errdonorname").innerHTML = "Donor name should contain only alphabets..";
-			validate = "false";
-		}
-		if (document.getElementById("donorname").value == "") {
-			document.getElementById("errdonorname").innerHTML = "Kindly enter donor name...";
-			i = 1;
-		}
-		if (document.getElementById("payment_type").value == "") {
-			document.getElementById("errpayment_type").innerHTML = "Kindly select Payment Type...";
-			i = 1;
-		}
-		if (!document.getElementById("cardholder").value.match(alphaSpaceExp)) {
-			document.getElementById("errcardholder").innerHTML = "Card Holder name should contain only alphabets..";
-			validate = "false";
-		}
-		if (document.getElementById("cardholder").value == "") {
-			document.getElementById("errcardholder").innerHTML = "Card Holder Should not be empty...";
-			i = 1;
-		}
-		if (document.getElementById("cardnumber").value.length != 16) {
-			document.getElementById("errcardnumber").innerHTML = "Card Number should contain 16 digits...";
-			i = 1;
-		}
-		if (document.getElementById("cardnumber").value == "") {
-			document.getElementById("errcardnumber").innerHTML = "Card Number Should not be empty...";
-			i = 1;
-		}
-		if (document.getElementById("month").value == "") {
-			document.getElementById("errmonth").innerHTML = "Kindly select expiry date...";
-			i = 1;
-		}
-		if (document.getElementById("cvv").value.length != 3) {
-			document.getElementById("errcvv").innerHTML = "CVV Number should contain 3 digits...";
-			i = 1;
-		}
-		if (document.getElementById("cvv").value == "") {
-			document.getElementById("errcvv").innerHTML = "CVV Number should not be empty...";
 			i = 1;
 		}
 		if (i == 0) {
