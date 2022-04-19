@@ -56,7 +56,7 @@ if (isset($_GET['checkout']) and in_array($_GET['checkout'], ['automatic', 'manu
 }
 
 $data = [
-    "key"               => "rzp_test_RCiRV3BO7ExUMn",
+    "key"               => $keyId,
     "amount"            => $amount,
     "name"              => "Life Of Giving",
     "description"       => "Donation_ ".$fund_raiser_id,
