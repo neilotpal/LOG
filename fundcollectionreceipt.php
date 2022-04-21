@@ -54,7 +54,7 @@ if(isset($_GET['fund_collection_id']))
 								<td style="text-align: left;WIDTH: 50%;">
 									<b>Donor :</b>
 									<br>
-									<?php echo $rsfund_collection['name']; ?>
+									<?php echo $rsfund_collection['name']; ?><br>
 									<?php echo $rsdonor['address']; ?><br>
 									<?php echo $rsdonor['city']; ?><br>
 									<b>PIN -</b> <?php echo $rsdonor['pin_code']; ?>
@@ -87,7 +87,7 @@ if(isset($_GET['fund_collection_id']))
 							 <?php echo $rsfund_raiser['title']; ?><br>
 							 Collection from <?php echo date("d-M-Y",strtotime($rsfund_raiser['start_date'])); ?> - <?php echo date("d-M-Y",strtotime($rsfund_raiser['end_date'])); ?><br>
 							 <br>
-							 <b>Payment type: <?php echo $rsfund_collection['payment_type']; ?></b>
+							 <b>Payment ID: <?php echo $rsfund_collection['payementid']; ?></b>
 						 </th>
 						 <th style="text-align: right;" valign="top">
 							 ₹<?php echo $rsfund_collection['paid_amt']; ?>
