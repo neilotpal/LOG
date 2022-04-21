@@ -1,10 +1,7 @@
 <?php
 if(!isset($_SESSION)) { session_start(); }
-<<<<<<< HEAD
-=======
 error_reporting(E_ALL & ~E_NOTICE  &  ~E_STRICT  &  ~E_WARNING);
 
->>>>>>> 4d7d172d877a2d706456bc653940fa0d522fcce5
 $dt = date("Y-m-d");
 $rupeesymbol= "₹";
 include("databaseconnection.php");
