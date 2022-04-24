@@ -18,6 +18,7 @@ Email ID : <input type="email" name="donoremail_id" id="donoremail_id" class="fo
 
 <div class="row">
 Password : <input type="password" name="donorpassword" id="donorpassword" class="form-control">
+
 <span id="errdonorpassword" class="errorclass"></span>
 </div>
 

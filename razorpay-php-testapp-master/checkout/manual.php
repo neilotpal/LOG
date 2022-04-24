@@ -16,7 +16,7 @@ body{
 </style>
 <body>
 
-<div class="rptext" style="margin-top:-100px">
+<div class="rptext" style="margin-top:20px">
   <img src="loglogo.jpg" alt="Razorpay Support" width="200" height="100"></div>
   <h3 style="color:red">LIFE OF GIVING</h3>
 <h1 style="color:black">Click on Below Button to proceed...</h1>

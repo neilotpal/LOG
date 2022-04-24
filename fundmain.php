@@ -8,8 +8,10 @@ if(isset($_POST['submit']))
 {
 	$description = mysqli_real_escape_string($con,$_POST['fund_raiser_description']);
 	$banner_img = rand() . $_FILES["banner_img"]["name"];
+
 	$curdate=date("Y-m-d");
 	move_uploaded_file($_FILES["banner_img"]["tmp_name"],"imgfundraiser/".$banner_img);
+	
 	if(isset($_GET['editid']))
 	{
 		 $sql ="UPDATE fund_raiser SET title='$_POST[title]',fund_raiser_description='$description',fund_amount='$_POST[fund_amount]',start_date='$curdate', end_date='$_POST[end_date]',status='$_POST[status]'";
@@ -131,6 +133,7 @@ else if(file_exists("imgfundraiser/".$rsedit['banner_img']))
 </div>
 
 <br>
+
 
 
 <div class="row">

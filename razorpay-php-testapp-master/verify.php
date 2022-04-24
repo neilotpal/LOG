@@ -52,7 +52,7 @@ if (mysqli_affected_rows($con) == 1) {
   $qsql1 = mysqli_query($con, $sql);
   $rs = mysqli_fetch_array($qsql1);
   $insid=$rs['fund_collection_id'];
-  echo "<script>alert('Fund collection process completed successfully....');</script>";
+  echo "<script>alert('Fund collection process completed successfully');</script>";
   echo "<script>window.location='http://localhost/LOG/fundcollectionreceipt.php?fund_collection_id=$insid';</script>";
   }
   else{

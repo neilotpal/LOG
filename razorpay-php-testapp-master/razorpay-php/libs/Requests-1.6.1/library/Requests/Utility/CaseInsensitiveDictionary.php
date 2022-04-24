@@ -26,7 +26,7 @@ class Requests_Utility_CaseInsensitiveDictionary implements ArrayAccess, Iterato
 	 * @param string $key Item key
 	 * @return boolean Does the item exist?
 	 */
-	public function offsetExists(mixed $key): bool {
+	public function offsetExists($key){
 		$key = strtolower($key);
 		return isset($this->data[$key]);
 	}
@@ -37,7 +37,7 @@ class Requests_Utility_CaseInsensitiveDictionary implements ArrayAccess, Iterato
 	 * @param string $key Item key
 	 * @return string Item value
 	 */
-	public function offsetGet(mixed $key) {
+	public function offsetGet($key) {
 		$key = strtolower($key);
 		if (!isset($this->data[$key]))
 			return null;
@@ -67,7 +67,7 @@ class Requests_Utility_CaseInsensitiveDictionary implements ArrayAccess, Iterato
 	 *
 	 * @param string $key
 	 */
-	public function offsetUnset(mixed $key):void {
+	public function offsetUnset($key) {
 		unset($this->data[strtolower($key)]);
 	}
 

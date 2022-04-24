@@ -1,9 +1,5 @@
 <?php
 include("header.php");
-<<<<<<< HEAD
-=======
-
->>>>>>> 4add32f40c28b60b3d91396016c97c39f39c0f86
 ?>
 </header>
 <div id="about" class="section">

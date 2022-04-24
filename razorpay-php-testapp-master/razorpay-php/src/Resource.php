@@ -15,22 +15,22 @@ class Resource implements ArrayAccess, IteratorAggregate
         return new \ArrayIterator($this->attributes);
     }
 
-    public function offsetExists(mixed $offset): bool
+    public function offsetExists($offset)
     {
         $ret= (isset($this->attributes[$offset]));
         return $ret;
     }
-    public function offsetSet(mixed $offset,mixed $value):void
+    public function offsetSet($offset,$value)
     {
         $this->attributes[$offset] = $value;
     }
 
-    public function offsetGet(mixed $offset): mixed
+    public function offsetGet($offset)
     {
         return $this->attributes[$offset];
     }
 
-    public function offsetUnset(mixed $offset):void
+    public function offsetUnset($offset)
     {
         unset($this->attributes[$offset]);
     }
