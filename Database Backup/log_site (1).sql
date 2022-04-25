@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2022 at 11:30 AM
+-- Generation Time: Apr 25, 2022 at 06:57 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -90,11 +90,10 @@ CREATE TABLE `fund_collection` (
   `fund_collection_id` int(10) NOT NULL,
   `fund_raiser_id` int(10) NOT NULL,
   `donor_id` int(10) NOT NULL,
+  `payementid` varchar(100) NOT NULL,
   `name` varchar(50) NOT NULL,
   `paid_amt` float(10,2) NOT NULL,
   `paid_date` date NOT NULL,
-  `payment_type` varchar(25) NOT NULL,
-  `payment_detail` text NOT NULL,
   `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -102,16 +101,9 @@ CREATE TABLE `fund_collection` (
 -- Dumping data for table `fund_collection`
 --
 
-INSERT INTO `fund_collection` (`fund_collection_id`, `fund_raiser_id`, `donor_id`, `name`, `paid_amt`, `paid_date`, `payment_type`, `payment_detail`, `status`) VALUES
-(1, 6, 1, 'Neilotpal Singh', 51000.00, '2022-04-06', 'AMERICAN EXPRESS', 'a:4:{i:0;s:15:\"Neilotpal Singh\";i:1;s:16:\"8976346387612876\";i:2;s:7:\"2022-12\";i:3;s:3:\"567\";}', 'Active'),
-(2, 7, 1, 'Neilotpal Singh', 100000.00, '2022-04-06', 'RUPAY', 'a:4:{i:0;s:15:\"Neilotpal Singh\";i:1;s:16:\"6789456723450976\";i:2;s:7:\"2022-10\";i:3;s:3:\"908\";}', 'Active'),
-(3, 2, 2, 'Nimisha Agarwal', 2000000.00, '2022-04-06', 'VISA', 'a:4:{i:0;s:15:\"Nimisha Agarwal\";i:1;s:16:\"7658349087610984\";i:2;s:7:\"2025-07\";i:3;s:3:\"456\";}', 'Active'),
-(4, 3, 3, 'Nikita Garg', 50000.00, '2022-04-06', 'AMERICAN EXPRESS', 'a:4:{i:0;s:11:\"Nikita Garg\";i:1;s:16:\"8790656798712890\";i:2;s:7:\"2022-12\";i:3;s:3:\"234\";}', 'Active'),
-(5, 4, 5, 'Anirudh Singh Chauhan', 10000.00, '2022-04-06', 'VISA', 'a:4:{i:0;s:21:\"Anirudh Singh Chauhan\";i:1;s:16:\"2345987645670987\";i:2;s:7:\"2026-06\";i:3;s:3:\"456\";}', 'Active'),
-(6, 1, 3, 'Nikita Garg', 100000.00, '2022-04-06', 'MASTER CARD', 'a:4:{i:0;s:11:\"Nikita Garg\";i:1;s:16:\"6789654378909876\";i:2;s:7:\"2022-12\";i:3;s:3:\"678\";}', 'Active'),
-(7, 1, 4, 'Nilanjana Singh', 1000000.00, '2022-04-06', 'AMERICAN EXPRESS', 'a:4:{i:0;s:15:\"Nilanjana Singh\";i:1;s:16:\"7890765434560987\";i:2;s:7:\"2028-11\";i:3;s:3:\"678\";}', 'Active'),
-(8, 8, 6, 'Devansh Chaudhary', 1000000.00, '2022-04-06', 'RUPAY', 'a:4:{i:0;s:17:\"Devansh Chaudhary\";i:1;s:16:\"7890765423457632\";i:2;s:7:\"2028-06\";i:3;s:3:\"567\";}', 'Active'),
-(9, 5, 7, 'Arun Kumar Singh', 70000.00, '2022-04-06', 'AMERICAN EXPRESS', 'a:4:{i:0;s:16:\"Arun Kumar Singh\";i:1;s:16:\"5673789123897654\";i:2;s:7:\"2024-10\";i:3;s:3:\"357\";}', 'Active');
+INSERT INTO `fund_collection` (`fund_collection_id`, `fund_raiser_id`, `donor_id`, `payementid`, `name`, `paid_amt`, `paid_date`, `status`) VALUES
+(1, 2, 1, 'pay_JM5VLxme2DLrVZ', 'Neilotpal Singh', 500.00, '2022-04-21', 'Active'),
+(2, 3, 2, 'pay_JM5YMxGFfHLS6s', 'Nimisha Agarwal', 250.00, '2022-04-21', 'Active');
 
 -- --------------------------------------------------------
 
@@ -146,7 +138,8 @@ INSERT INTO `fund_raiser` (`fund_raiser_id`, `donor_id`, `title`, `banner_img`, 
 (5, 3, 'IIT alumnus Varun Shrivastava is on a mission to educate street children. Support him, donate now', '17374581497.jpeg', 'We hope to educate these kids in a dignified set-up where they receive uninterrupted education without getting distracted or affected by harsh weather. One bus can accommodate 30 students and can easily help us cover more locations, reach out to many more slum and street kids and introduce learning at an early stage. We can’t do this without your support. Only your kindness and generosity can help us increase their learning capabilities', 8000000.00, '2022-04-05', '2023-02-18', '98745673176', 'SBIN0031756', 'Amroha', 'Active'),
 (6, 2, 'Premature twins are struggling to breathe. Donate to save their lives with ventilator support', '11725974266.jpeg', 'Pallavi can’t bear to look at her twins in pain. Covered in tubes fighting for each breath, her twins are struggling to survive. Since they weighed only 1kg each, they were immediately put in a life-support chamber to receive respiratory support and are currently on IV fluids and antibiotics. The newborns will need to stay in the hospital for around a month to fully recover and go home with their parents.\r\n\r\nFor a continuous stay in the NICU, Pallavi and Jagdish need to arrange ?19.5 lakhs for both the twins - something they cannot afford in a short period of time. They have already used all their savings, sold their properties, taken loans for IVF and delivery expenses. They have nothing left other than hope.', 6500000.00, '2022-04-05', '2022-09-15', '87537829874', 'SBIN8749384', 'Jaipur', 'Active'),
 (7, 2, 'Educate Slum Children through Education on Wheels', '843907628.jpg', 'Education on Wheels (EOW) is a unique programme where the school comes home, virtually to the doorstep of the student. Making the learning process exciting, novel and convenient, the EOW is a well-equipped bus which is mobile and it moves with teachers to different locations. It has on board computers, television and other essential education related materials.\r\nThe key objective of the project is to reach the vast majority of children who are living in vulnerable conditions and are unable to access education in a favourable learning environment. It is designed to enable non-school going children to acquire minimum knowledge and skills and mainstreaming them in formal schools.', 1000000.00, '2022-04-05', '2022-07-31', '6538923873', 'UTIB0000624', 'Tonk, Newai', 'Active'),
-(8, 1, 'Mission Manobal Nirmaan Abhiyan 2022', '54113312710.jpeg', 'In our country, there are hardly any facilities for physically challenged and orphan youth for their higher education and administrative career. For visually impaired and hearing impaired youth study material, teaching resources, technology, and other facilities are not available for higher education. Government and various non-governmental organizations do work for rehabilitation and welfare of these children but their focus is largely on children (age below 18 years) and welfare through providing alternative livelihood opportunities. \r\nI am fundraising for a cause close to my heart, to bring a lasting change in the lives of the underprivileged. To help me create more impact and touch more lives, I need your support and contribution. Please back my fundraiser so that together we can build a better India for all of us.\r\nPledge your support, donate now!', 1500000.00, '2022-04-05', '2022-05-28', '80770183936', 'SBIN0051395', 'Rishikesh', 'Active');
+(8, 1, 'Mission Manobal Nirmaan Abhiyan 2022', '54113312710.jpeg', 'In our country, there are hardly any facilities for physically challenged and orphan youth for their higher education and administrative career. For visually impaired and hearing impaired youth study material, teaching resources, technology, and other facilities are not available for higher education. Government and various non-governmental organizations do work for rehabilitation and welfare of these children but their focus is largely on children (age below 18 years) and welfare through providing alternative livelihood opportunities. \r\nI am fundraising for a cause close to my heart, to bring a lasting change in the lives of the underprivileged. To help me create more impact and touch more lives, I need your support and contribution. Please back my fundraiser so that together we can build a better India for all of us.\r\nPledge your support, donate now!', 1500000.00, '2022-04-05', '2022-05-28', '80770183936', 'SBIN0051395', 'Rishikesh', 'Active'),
+(13, 1, 'Donate Funds', '828485422img.jpeg', 'The children we serve come from needy backgrounds; most of the parents are daily wagers who have lost their source of income. Nityaasha has identified these children and their families through our trusted volunteers and doctors from local hospitals (mainly paediatricians, endocrinologists and diabetes specialists). Each family has been individually screened and home visits have been made to understand their living conditions.\r\n\r\nThese children need a daily supply of insulin, glucose strips and nutrition. For the last six months, during the lockdown, Nityaasha was supplying these essentials, free of cost, directly at their doorstep, ensuring the children’s health does not suffer.', 100000.00, '2022-04-23', '2022-04-30', '23456875641', 'BKID0007117', 'Udaipur City', 'Active');
 
 -- --------------------------------------------------------
 
@@ -259,13 +252,13 @@ ALTER TABLE `donor`
 -- AUTO_INCREMENT for table `fund_collection`
 --
 ALTER TABLE `fund_collection`
-  MODIFY `fund_collection_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `fund_collection_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `fund_raiser`
 --
 ALTER TABLE `fund_raiser`
-  MODIFY `fund_raiser_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `fund_raiser_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `item_donor`
